@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73e542cbb8174e64ba2ad89eeafbd1e, type: 3}
   m_Name: Food
   m_EditorClassIdentifier: 
-  Color: {r: 1, g: 0, b: 0.10329819, a: 1}
-  amountPerClick: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  amountPerClick: 2
