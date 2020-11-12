@@ -3,7 +3,7 @@
 [CreateAssetMenu]
 public class Resource : ScriptableObject
 {
-    public Color Color;
+    public Color color;
     public int amountPerClick = 1;
 
     public int Owned {
