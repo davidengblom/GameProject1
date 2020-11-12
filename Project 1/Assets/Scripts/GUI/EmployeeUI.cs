@@ -9,6 +9,12 @@ namespace GUI
         //TODO retrieve data how many employees player has
         //TODO retrieve data on level (and current EXP/progress bar?) the player has
         //public OwnedEmployersUI ownedEmployersUI;
+        public Text ownedMinersText;
+        public Text ownedLumberJacksText;
+        public Text ownedHuntersText;
+        public int ownedMiners;
+        public int ownedLumberJacks;
+        public int ownedHunters;
         [SerializeField] Text tempText;
         int shitty = 0;
 

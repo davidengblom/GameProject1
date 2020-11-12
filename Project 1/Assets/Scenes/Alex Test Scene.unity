@@ -333,7 +333,6 @@ GameObject:
   - component: {fileID: 1379720555}
   - component: {fileID: 1379720554}
   - component: {fileID: 1379720553}
-  - component: {fileID: 1379720552}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -341,21 +340,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1379720552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379720551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb3ca0deff7704140a68da1fce95ae70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  purchasable:
-    resource: {fileID: 0}
-    cost: 0
 --- !u!114 &1379720553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,9 +613,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchasable:
-    resource: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
-    cost: 10
-  tempText: {fileID: 2058800149}
+    resource: {fileID: 0}
+    cost: 0
+  ownedMinersText: {fileID: 0}
+  ownedLumberJacksText: {fileID: 0}
+  ownedHuntersText: {fileID: 0}
+  ownedMiners: 0
+  ownedLumberJacks: 0
+  ownedHunters: 0
+  tempText: {fileID: 0}
 --- !u!114 &2036000427
 MonoBehaviour:
   m_ObjectHideFlags: 0

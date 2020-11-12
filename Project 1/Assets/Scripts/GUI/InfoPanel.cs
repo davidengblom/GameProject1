@@ -6,7 +6,7 @@ namespace GUI
 {
     public class InfoPanel : MonoBehaviour, IPointerClickHandler
     {
-        [SerializeField] Purchasable purchasable;
+        public Purchasable purchasable;
         //TODO add UI elements which are used on multiple overview panels, such as title 
 
         protected Action Purchased;
