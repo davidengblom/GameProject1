@@ -20,7 +20,7 @@ public class Sound
 
     private AudioSource source;
 
-    public void SetSourrce (AudioSource _source)
+    public void SetSource (AudioSource _source)
     {
         source = _source;
         source.clip = clip;
@@ -40,14 +40,27 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds;
 
+    void Awake()
+    {
+        if (instance != null)
+        instance = this;
+    }
+
     void Start ()
     {
         for (int i = 0; i < sounds.Length; i++)
         {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
+            _go.transform.SetParent(this.transform);
             sounds[i].SetSource (_go.AddComponent<AudioSource>());
         }
+
+        
+
     }
+
+
+
 
     public void PlaySound (string _name)
     {
@@ -60,7 +73,7 @@ public class AudioManager : MonoBehaviour
             }
         }
         // no sound with _name
-        Debug.LogWarning ("AudioManager: Sound not found in list (I canne´ focki´n find eit!): " +_name)
+        Debug.LogWarning("AudioManager: Sound not found in list (I canne´ focki´n find eit!): " + _name);
     }
 
 
