@@ -1,18 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace GUI
 {
     public class InfoPanel : MonoBehaviour, IPointerClickHandler
     {
-        //TODO create a serializable class for resourceCost and resourceType
+        [SerializeField] Purchasable purchasable;
         //TODO add UI elements which are used on multiple overview panels, such as title 
+
+        public Action Purchased;
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            //TODO create a bool that checks whether the player has enough resources to proceed with the purchase 
-            //TODO subtract resource on purchase 
+            if (!this.purchasable.IsAffordable()) return;
+            this.Purchased();
+            this.purchasable.resource.Owned -= this.purchasable.cost;
+            print(this.purchasable.resource.Owned);
         }
-        
+
+        public void Produce()
+        {
+            this.purchasable.resource.Produce(); //temporary class to try things out.
+            print(this.purchasable.resource.Owned);
+        }
     }
 }
