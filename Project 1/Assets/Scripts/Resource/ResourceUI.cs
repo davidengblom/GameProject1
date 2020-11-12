@@ -9,8 +9,6 @@ public class ResourceUI : MonoBehaviour {
     void Start()
     {
         resourceNameText.text = resource.name;
-        amountText.color = resource.color;
-
     }
     
     void Update()
