@@ -1,5 +1,4 @@
-﻿using UnityEditor.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
 public class Resource : ScriptableObject
@@ -17,3 +16,5 @@ public class Resource : ScriptableObject
         this.Owned += this.amountPerClick;
     }
 }
+
+
