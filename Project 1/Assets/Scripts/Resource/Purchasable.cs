@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-
-[System.Serializable]
-public class Purchasable : MonoBehaviour
+﻿[System.Serializable]
+public class Purchasable 
 {
     public Resource resource;
     public int cost;
