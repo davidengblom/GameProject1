@@ -9,7 +9,7 @@ namespace GUI
         [SerializeField] Purchasable purchasable;
         //TODO add UI elements which are used on multiple overview panels, such as title 
 
-        public Action Purchased;
+        protected Action Purchased;
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -24,5 +24,6 @@ namespace GUI
             this.purchasable.resource.Produce(); //temporary class to try things out.
             print(this.purchasable.resource.Owned);
         }
+
     }
 }
