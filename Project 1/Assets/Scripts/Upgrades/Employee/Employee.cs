@@ -9,7 +9,6 @@ public class Employee : MonoBehaviour
     public Text resourceAmountText;
     public Text resourceTypeText;
     public Resource resource;
-    
 
     float elapsedTime;
 
