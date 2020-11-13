@@ -10,6 +10,14 @@ namespace GUI
     public class OpenClosePanel : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] GameObject overviewPanel;
+        CanvasGroup _canvasGroup;
+
+
+        void Start()
+        {
+            this._canvasGroup = this.overviewPanel.GetComponent<CanvasGroup>();
+            ShouldShowPanel(false);
+        }
 
         void Update()
         {
@@ -28,18 +36,33 @@ namespace GUI
 
             if (raycastResults.Count > 0)
             {
-                if (raycastResults.Any(go => go.gameObject == this.overviewPanel))
-                {
-                    return;
-                }
+                return;
+                // foreach (var result in raycastResults)
+                // {
+                //     return;
+                // }
             }
 
-            this.overviewPanel.SetActive(false);
+            ShouldShowPanel(false);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            this.overviewPanel.SetActive(true);
+            this.ShouldShowPanel(true);
+        }
+
+        void ShouldShowPanel(bool shouldShowPanel)
+        {
+            if (shouldShowPanel)
+            {
+                this._canvasGroup.alpha = 1;
+                this._canvasGroup.interactable = true;
+            }
+            else
+            {
+                this._canvasGroup.alpha = 0;
+                this._canvasGroup.interactable = false;
+            }
         }
     }
 }
