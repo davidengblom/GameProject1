@@ -31,7 +31,19 @@ public class Employee : MonoBehaviour
 
     void ProduceResource()
     {
-        resource.Owned += this.productionAmount;
+        var hire = FindObjectOfType<Hire>();
+        if (resource.name == "Food")
+        {
+            resource.Owned += this.productionAmount * hire.Hunter;
+        }
+        if (resource.name == "Stone")
+        {
+            resource.Owned += this.productionAmount * hire.Miner;
+        }
+        if (resource.name == "Wood")
+        {
+            resource.Owned += this.productionAmount * hire.LumberJack;
+        }
     }
 
     void UpdateResourceAmountLabel()

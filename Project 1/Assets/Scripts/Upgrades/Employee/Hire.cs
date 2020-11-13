@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Hire : MonoBehaviour
 {
-    const string lumberJack = "lumberJack";
-    const string miner = "miner";
-    const string hunter = "hunter";
-
     public int LumberJack
     {
         get => PlayerPrefs.GetInt("lumberJack", 0);
