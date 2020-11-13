@@ -9,6 +9,7 @@ public class Employee : MonoBehaviour
     public Text resourceAmountText;
     public Text resourceTypeText;
     public Resource resource;
+    
 
     float elapsedTime;
 
@@ -24,7 +25,6 @@ public class Employee : MonoBehaviour
         if (this.elapsedTime >= this.productionTime)
         {
             ProduceResource();
-
             this.elapsedTime -= this.productionTime;
         }
         UpdateResourceAmountLabel();
@@ -35,12 +35,9 @@ public class Employee : MonoBehaviour
         resource.Owned += this.productionAmount;
     }
 
-    
-
     void UpdateResourceAmountLabel()
     {
         this.resourceAmountText.text = this.resource.Owned.ToString();
     }
 
-    
 }
