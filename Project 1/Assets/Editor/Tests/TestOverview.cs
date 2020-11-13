@@ -9,7 +9,6 @@ namespace Tests
         [Test]
         public void TestSimplePasses()
         {
-            InfoPanel infoPanel = new InfoPanel();
            // Assert.AreEqual(1, infoPanel.Cost());
         }
     }
