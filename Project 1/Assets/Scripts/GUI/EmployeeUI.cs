@@ -14,18 +14,17 @@ namespace GUI
         public Purchasable purchaseHunter;
         public Text ownedEmployersText;
 
-        int minersOwned;
-        int lumberjacksOwned;
-        int huntersOwned;
+        Hire _hire;
 
         void Start()
         {
+            this._hire = FindObjectOfType<Hire>();
             this.OwnedEmployeesUI();
         }
 
         void OwnedEmployeesUI()
         {
-            this.ownedEmployersText.text = $"Current owned {this.minersOwned} miner(s), {this.lumberjacksOwned} lumberjack(s), {this.huntersOwned} hunter(s)";
+            this.ownedEmployersText.text = $"Current owned {this._hire.Miner} miner(s), {this._hire.LumberJack} lumberjack(s), {this._hire.Hunter} hunter(s)";
         }
 
 
@@ -33,7 +32,7 @@ namespace GUI
         {
             if (!this.purchaseMiner.IsAffordable()) return;
             this.purchaseMiner.resource.Owned -= this.purchaseMiner.cost;
-            this.minersOwned++;
+            this._hire.Miner++;
             this.OwnedEmployeesUI();
         }
 
@@ -42,7 +41,7 @@ namespace GUI
             
             if (!this.purchaseLumberjack.IsAffordable()) return;
             this.purchaseLumberjack.resource.Owned -= this.purchaseLumberjack.cost;
-            this.lumberjacksOwned++;
+            this._hire.LumberJack++;
             this.OwnedEmployeesUI();
             
         }
@@ -51,7 +50,7 @@ namespace GUI
         {
             if (!this.purchaseHunter.IsAffordable()) return;
             this.purchaseHunter.resource.Owned -= this.purchaseHunter.cost;
-            this.huntersOwned++;
+            this._hire.Hunter++;
             this.OwnedEmployeesUI();
         }
     }
