@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace GUI
 {
+    [RequireComponent(typeof(OverviewPanelReference))]
     public class EmployeeUI : MonoBehaviour
     {
         //TODO retrieve data how many employees player has
@@ -19,7 +18,7 @@ namespace GUI
         void Start()
         {
             this._hire = FindObjectOfType<Hire>();
-            this.OwnedEmployeesUI();
+            OwnedEmployeesUI();
         }
 
         void OwnedEmployeesUI()
@@ -33,7 +32,7 @@ namespace GUI
             if (!this.purchaseMiner.IsAffordable()) return;
             this.purchaseMiner.resource.Owned -= this.purchaseMiner.cost;
             this._hire.Miner++;
-            this.OwnedEmployeesUI();
+            OwnedEmployeesUI();
         }
 
         public void PurchaseLumberjack()
@@ -42,7 +41,7 @@ namespace GUI
             if (!this.purchaseLumberjack.IsAffordable()) return;
             this.purchaseLumberjack.resource.Owned -= this.purchaseLumberjack.cost;
             this._hire.LumberJack++;
-            this.OwnedEmployeesUI();
+            OwnedEmployeesUI();
             
         }
 
@@ -51,7 +50,7 @@ namespace GUI
             if (!this.purchaseHunter.IsAffordable()) return;
             this.purchaseHunter.resource.Owned -= this.purchaseHunter.cost;
             this._hire.Hunter++;
-            this.OwnedEmployeesUI();
+            OwnedEmployeesUI();
         }
     }
 }
