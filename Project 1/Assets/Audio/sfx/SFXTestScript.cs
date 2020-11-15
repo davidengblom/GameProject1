@@ -4,6 +4,7 @@ public class SFXTestScript : MonoBehaviour {
     public AudioClip[] FoodSounds;
     public AudioClip[] StoneSounds;
     public AudioClip[] LumberSounds;
+    public AudioClip MouseClickSound;
 
     public void PlayLumberSounds()
     {
@@ -30,5 +31,12 @@ public class SFXTestScript : MonoBehaviour {
         audio.clip = StoneSounds[random];
         audio.Play();
         Debug.Log("Playing Sound nr: " + StoneSounds[random].name);
+    }
+
+    public void PlayMouseClickSound()
+    {
+        AudioSource audio = GetComponentInParent<AudioSource>();
+        audio.clip = MouseClickSound;
+        audio.Play();
     }
 }
