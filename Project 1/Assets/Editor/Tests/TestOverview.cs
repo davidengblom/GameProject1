@@ -1,5 +1,4 @@
-﻿using GUI;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Tests
 {

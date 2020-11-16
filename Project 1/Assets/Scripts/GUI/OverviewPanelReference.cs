@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GUI
+public class OverviewPanelReference : MonoBehaviour
 {
-    public class OverviewPanelReference : MonoBehaviour
-    {
    
-    }
 }

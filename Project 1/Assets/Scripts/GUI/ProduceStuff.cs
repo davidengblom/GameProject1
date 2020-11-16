@@ -1,19 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GUI
+/// <summary>
+/// temporary class to test things out
+/// </summary>
+public class ProduceStuff : MonoBehaviour, IPointerClickHandler
 {
-    /// <summary>
-    /// temporary class to test things out
-    /// </summary>
-    public class ProduceStuff : MonoBehaviour, IPointerClickHandler
-    {
-        public Resource resource;
+    public Resource resource;
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            this.resource.Produce();
-            print(this.resource.Owned + " : " + this.resource.name);
-        }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        this.resource.Produce();
+        print(this.resource.Owned + " : " + this.resource.name);
     }
 }
