@@ -1,60 +1,26 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
+using UnityEngine;
+using Upgrades.Character;
 
-public class Employee : MonoBehaviour
+[Serializable]
+public class Employee
 {
-    public int productionAmount = 1;
-    public float productionTime = 1f;
+    public EmployeeType type;
+    public float productionTime;
+    public float timer;
 
-    public Text resourceAmountText;
-    public Text resourceTypeText;
-    public Resource resource;
+    public bool ShouldProduce => Time.time - this.timer > this.productionTime;
 
-    float elapsedTime;
-
-    public int ProductionAmount
+    public int EmployeeLevel
     {
-        get => PlayerPrefs.GetInt("employeeProduction", 0);
-        set => PlayerPrefs.SetInt("employeeProduction", value);
+        get => PlayerPrefs.GetInt("EmployeeLevel" + this.type, 1);
+        set => PlayerPrefs.SetInt("EmployeeLevel" + this.type, value);
     }
 
-    private void Start()
+    public void AutoProduce(Resource resource)
     {
-        UpdateResourceAmountLabel();
-        this.resourceTypeText.text = this.resource.name;
+        if (!this.ShouldProduce) return;
+        this.timer = Time.time;
+        resource.Owned += resource.amountPerClick * this.EmployeeLevel;
     }
-
-    void Update()
-    {
-        this.elapsedTime += Time.deltaTime;
-        if (this.elapsedTime >= this.productionTime)
-        {
-            ProduceResource();
-            this.elapsedTime -= this.productionTime;
-        }
-        UpdateResourceAmountLabel();
-    }
-
-    void ProduceResource()
-    {
-        var hire = FindObjectOfType<Hire>();
-        if (resource.name == "Food")
-        {
-            resource.Owned += this.productionAmount * hire.Hunter;
-        }
-        if (resource.name == "Stone")
-        {
-            resource.Owned += this.productionAmount * hire.Miner;
-        }
-        if (resource.name == "Wood")
-        {
-            resource.Owned += this.productionAmount * hire.LumberJack;
-        }
-    }
-
-    void UpdateResourceAmountLabel()
-    {
-        this.resourceAmountText.text = this.resource.Owned.ToString();
-    }
-
 }

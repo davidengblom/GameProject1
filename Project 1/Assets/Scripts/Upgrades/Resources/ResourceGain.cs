@@ -1,32 +1,45 @@
-﻿using HUD;
+﻿using System;
+using HUD;
 using UnityEngine;
+using Upgrades.Character;
 
 public class ResourceGain : MonoBehaviour
 {
-    //To Do List
-    //1. Function to increase resource gain from clicking by x %
-    //2. Function to increase resource gain from employees (automatic) by x %
+    public EmployeeType type;
 
     public Resource resource;
     public Employee employee;
     public UpgradesUI currentUpgrades;
+    
     public int employeeLevel = 1;
     public int clickLevel = 1;
     
     public int amount;
 
-    public void ClickUpgrade()
+    private void Start()
     {
-        resource.amountPerClick += amount * clickLevel;
-        clickLevel++;
-        currentUpgrades.UpdateData();
+        this.employee.type = this.type;
+    }
+
+    private void Update()
+    {
+        this.employee.AutoProduce(this.resource);
     }
 
     public void EmployeeUpgrade()
     {
-        employee.ProductionAmount += amount * employeeLevel;
-        employeeLevel++;
-        currentUpgrades.UpdateData();
+        // if (this.type != this.employee.type) return;
+        // this.employee.ProductionAmount += this.amount * this.employeeLevel;
+        // this.employeeLevel++;
+        // this.currentUpgrades.UpdateData();
+    }
+    
+    public void Upgrade()
+    {
+        if (this.type != this.employee.type) return;
+        this.resource.Owned += this.resource.amountPerClick * this.resource.ClickLevel;
+        this.resource.ClickLevel++;
+        this.currentUpgrades.UpdateData();
     }
 }
 
