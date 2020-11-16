@@ -12,6 +12,12 @@ public class Employee : MonoBehaviour
 
     float elapsedTime;
 
+    public int ProductionAmount
+    {
+        get => PlayerPrefs.GetInt("employeeProduction", 0);
+        set => PlayerPrefs.SetInt("employeeProduction", value);
+    }
+
     private void Start()
     {
         UpdateResourceAmountLabel();

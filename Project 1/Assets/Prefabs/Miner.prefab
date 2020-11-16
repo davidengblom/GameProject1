@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbed80565b28024485442a04e26e077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionAmount: 1
+  productionAmount: 2
   productionTime: 1
   resourceAmountText: {fileID: 1294611888092286779}
   resourceTypeText: {fileID: 1294611887591451078}

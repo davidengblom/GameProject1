@@ -17,10 +17,10 @@ namespace HUD
             UpdateData();
         }
 
-        private void UpdateData()
+        public void UpdateData()
         {
             currentUpgradesText.text =
-                $"{hunter.productionAmount} per Hunter, {lumberjack.productionAmount} per Lumberjack, {miner.productionAmount} per Miner";
+                $"{hunter.ProductionAmount} per Hunter, {lumberjack.ProductionAmount} per Lumberjack, {miner.ProductionAmount} per Miner";
         }
     }
 }

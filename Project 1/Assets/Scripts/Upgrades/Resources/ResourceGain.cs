@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using HUD;
+using UnityEngine;
 
 public class ResourceGain : MonoBehaviour
 {
@@ -8,19 +9,24 @@ public class ResourceGain : MonoBehaviour
 
     public Resource resource;
     public Employee employee;
-    public float clickPercent;
-    public float employeePercent;
+    public UpgradesUI currentUpgrades;
+    public int employeeLevel = 1;
+    public int clickLevel = 1;
+    
+    public int amount;
 
     public void ClickUpgrade()
     {
-        resource.amountPerClick = (int) (resource.amountPerClick * clickPercent);
-        //Update the data text on Upgrades UI
+        resource.amountPerClick += amount * clickLevel;
+        clickLevel++;
+        currentUpgrades.UpdateData();
     }
 
     public void EmployeeUpgrade()
     {
-        employee.productionAmount = (int) (employee.productionAmount * employeePercent);
-        //Update the data text on Upgrades UI
+        employee.ProductionAmount += amount * employeeLevel;
+        employeeLevel++;
+        currentUpgrades.UpdateData();
     }
 }
 
