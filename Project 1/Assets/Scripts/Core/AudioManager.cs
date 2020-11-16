@@ -74,14 +74,19 @@ public class AudioManager : MonoBehaviour
         Debug.LogWarning("AudioManager: Sound not found in list (I canne´ focki´n find eit!): " + Sound);
     }
 
-    private void RandomAudioClip(int i)
+    void RandomAudioClip(int sound)
     {
-        var random = Random.Range(0, sounds.Length + 1);
-        AudioSource audio = transform.GetChild(random).GetComponent<AudioSource>();
-        //print(audio.transform.parent.name);
-        //audio.clip = transform.GetChild(0).GetComponent<AudioClip>();
-        //audio.clip = sounds[i].clip[random];
-        audio.Play();
-        Debug.Log($"Playing sound: {random}");
+        var clipToPlay = Random.Range(0, this.sounds[sound].clip.Length);
+        var soundName = this.sounds[sound].clip[clipToPlay].name;
+
+        foreach (var inChild in GetComponentsInChildren<Transform>())
+        {
+            if (inChild.gameObject == this.gameObject) continue;
+            var audioSource = inChild.GetComponent<AudioSource>();
+            
+            if (audioSource.clip.name != soundName) continue;
+            audioSource.Play();
+            break;
+        }
     }
 }
