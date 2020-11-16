@@ -523,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -116.22, y: 78.44}
+  m_AnchoredPosition: {x: -116.220215, y: 78.43994}
   m_SizeDelta: {x: -268.4909, y: -183.35814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176677084
@@ -1226,7 +1226,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
@@ -1339,9 +1339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36077b9f0b27c4262ac85df1f03fe67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incrementFactorPerLevel: 3
-  baseExpRequirement: 10
-  employeeType: 0
 --- !u!4 &1056093079
 Transform:
   m_ObjectHideFlags: 0
@@ -1417,7 +1414,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
@@ -1579,7 +1576,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
@@ -2200,6 +2197,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expImage: {fileID: 572998022}
   expText: {fileID: 977825505}
+  _experience:
+    incrementFactorPerLevel: 2
+    baseExpRequirement: 10
+    employeeType: 0
 --- !u!114 &2970597672485262392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2376,6 +2377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expImage: {fileID: 247974214}
   expText: {fileID: 1196820497}
+  _experience:
+    incrementFactorPerLevel: 2
+    baseExpRequirement: 10
+    employeeType: 1
 --- !u!114 &2970597673195004660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3130,6 +3135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expImage: {fileID: 2065315980}
   expText: {fileID: 1383319748}
+  _experience:
+    incrementFactorPerLevel: 2
+    baseExpRequirement: 10
+    employeeType: 2
 --- !u!114 &2970597673886797214
 MonoBehaviour:
   m_ObjectHideFlags: 0
