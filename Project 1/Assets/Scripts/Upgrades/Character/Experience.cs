@@ -19,15 +19,7 @@ namespace Upgrades.Character
 
         public float ExperienceToNextLevel
         {
-            get
-            {
-                if (this.CurrentLevel < 2)
-                {
-                    return this.baseExpRequirement;
-                }
-
-                return PlayerPrefs.GetFloat("ExpToNextLevel" + this.employeeType, 0);
-            }
+            get => PlayerPrefs.GetFloat("ExpToNextLevel" + this.employeeType, this.baseExpRequirement);
             set => PlayerPrefs.SetFloat("ExpToNextLevel" + this.employeeType, value);
         }
 
