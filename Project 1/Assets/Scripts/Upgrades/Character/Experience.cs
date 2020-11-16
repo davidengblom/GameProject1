@@ -31,12 +31,9 @@ namespace Upgrades.Character
 
         public void GainExperience(int amountToGain, EmployeeType employeeType)
         {
-            this.employeeType = employeeType;
-            if (this.employeeType == employeeType)
-            {
-                this.ExperiencePoints += amountToGain;
-                HasLeveledUp(this.employeeType);
-            }
+            if (this.employeeType != employeeType) return;
+            this.ExperiencePoints += amountToGain;
+            HasLeveledUp(this.employeeType);
         }
 
         void HasLeveledUp(EmployeeType employeeType)
