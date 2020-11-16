@@ -7,8 +7,7 @@ public class Resource : ScriptableObject
     public Color color;
     public int amountPerClick = 1;
     public int expGainPerClick = 2;
-    public EmployeeType employeeType;
-
+    public Experience _experience;
     public int ClickLevel
     {
         get => PlayerPrefs.GetInt("ClickLevel" + this.name, 1);
@@ -25,6 +24,6 @@ public class Resource : ScriptableObject
     public void Produce()
     {
         this.Owned += this.amountPerClick * this.ClickLevel;
-        FindObjectOfType<Experience>().GainExperience(this.expGainPerClick, this.employeeType);
+        this._experience.GainExperience(this.expGainPerClick, this._experience.employeeType);
     }
 }

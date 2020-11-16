@@ -1,19 +1,15 @@
-﻿using System;
+using System;
 using UnityEngine;
-
 
 namespace Upgrades.Character
 {
-    public class Experience : MonoBehaviour
+    [Serializable]
+    public class Experience
     {
         [Tooltip("How much should max level exp requirement increment per level?")]
         public int incrementFactorPerLevel = 2;
-
         public int baseExpRequirement = 10;
-
         public EmployeeType employeeType;
-
-        int _experienceToNextLevel;
 
         public int ExperiencePoints
         {
@@ -21,7 +17,19 @@ namespace Upgrades.Character
             set => PlayerPrefs.SetInt("CurrentExperience" + this.employeeType, value);
         }
 
-        public float ExperienceToNextLevel() => (this.incrementFactorPerLevel * this.baseExpRequirement) * this.CurrentLevel;
+        public float ExperienceToNextLevel
+        {
+            get
+            {
+                if (this.CurrentLevel < 2)
+                {
+                    return this.baseExpRequirement;
+                }
+
+                return PlayerPrefs.GetFloat("ExpToNextLevel" + this.employeeType, 0);
+            }
+            set => PlayerPrefs.SetFloat("ExpToNextLevel" + this.employeeType, value);
+        }
 
         public int CurrentLevel
         {
@@ -32,19 +40,20 @@ namespace Upgrades.Character
         public void GainExperience(int amountToGain, EmployeeType employeeType)
         {
             this.employeeType = employeeType;
-            this.ExperiencePoints += amountToGain;
-            HasLeveledUp(this.employeeType);
+            if (this.employeeType == employeeType)
+            {
+                this.ExperiencePoints += amountToGain;
+                HasLeveledUp(this.employeeType);
+            }
         }
 
         void HasLeveledUp(EmployeeType employeeType)
         {
             if (this.employeeType != employeeType) return;
-
-            if (!(this.ExperiencePoints >= ExperienceToNextLevel())) return;
-            
+            if (!(this.ExperiencePoints >= this.ExperienceToNextLevel)) return;
+            this.ExperienceToNextLevel *= this.incrementFactorPerLevel;
             this.ExperiencePoints = 0;
             this.CurrentLevel++;
-            print(this.CurrentLevel + "   " + employeeType);
         }
     }
 }
