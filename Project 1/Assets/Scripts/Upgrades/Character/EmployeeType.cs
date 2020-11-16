@@ -4,6 +4,7 @@ namespace Upgrades.Character
     {
         Miner,
         Hunter,
-        Lumberjack
+        Lumberjack,
+        Gold
     }
 }
