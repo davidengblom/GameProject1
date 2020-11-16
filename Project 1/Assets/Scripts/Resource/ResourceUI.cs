@@ -8,7 +8,7 @@ public class ResourceUI : MonoBehaviour {
     
     void Start()
     {
-        resourceNameText.text = resource.name;
+        //resourceNameText.text = resource.name;
     }
     
     void Update()
