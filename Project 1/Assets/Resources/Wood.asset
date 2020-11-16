@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73e542cbb8174e64ba2ad89eeafbd1e, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  Color: {r: 0.38679248, g: 0.19042093, b: 0, a: 1}
-  amountPerClick: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  amountPerClick: 2
+  expGainPerClick: 1
+  employeeType: 2
