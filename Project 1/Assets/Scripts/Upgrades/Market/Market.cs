@@ -9,6 +9,7 @@ public class Market : MonoBehaviour
     public Resource stone;
     public Resource wood;
     public Resource gold;
+    public Resource crystal;
     
     Resource resource;
     Resource resourceCost1;
@@ -20,6 +21,7 @@ public class Market : MonoBehaviour
 
     public int costMultiplier = 2;
     public int goldCostMultiplier = 20;
+    public int crystalCostMultiplier = 2;
     private int costAmount = 0;
     private string costAmountToText = "0";
 
@@ -49,11 +51,21 @@ public class Market : MonoBehaviour
         costAmount = amount * goldCostMultiplier;
     }
 
+    void CalcCrystalCost()
+    {
+        costAmount = amount * crystalCostMultiplier;
+    }
+
     void UpdateText()
     {
         costAmountToText = costAmount.ToString();
         resourceToBuyTitleText.text = this.resource.name;
-        costResourceType.text = resourceCost1.name;
+        
+        if (resource.name == "Crystal") {
+            costResourceType.text = gold.name;
+        }else {
+            costResourceType.text = resourceCost1.name;
+        }
         costAmountText.text = costAmountToText;
     }
 
@@ -65,6 +77,12 @@ public class Market : MonoBehaviour
             userInput = input;
             amount = Int32.Parse(userInput);
             CalcGoldCost();
+        }else if (resource.name == "Crystal")
+        {
+            inputField.text = input;
+            userInput = input;
+            amount = Int32.Parse(userInput);
+            CalcCrystalCost();
         }
         else
         {
@@ -104,14 +122,14 @@ public class Market : MonoBehaviour
         }else if (this.resource.name == gold.name) {
             resourceCost1 = food;
             resourceCost2 = wood;
+        }else if (this.resource.name == crystal.name) {
+            resourceCost1 = gold;
         }
     }
 
     bool CanAfford()
     {
-        if (resourceCost1.Owned >= costAmount) {
-            return true;
-        }
+        if (resourceCost1.Owned >= costAmount) { return true; }
         return false;  
     }
 }
