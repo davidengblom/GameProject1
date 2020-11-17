@@ -13,43 +13,46 @@ namespace HUD
         public Purchasable purchaseHunter;
         public Text ownedEmployersText;
 
-        Hire _hire;
+        public Hire hunter;
+        public Hire miner;
+        public Hire lumberJack;
+        
 
         void Start()
         {
-            this._hire = FindObjectOfType<Hire>();
+            
             OwnedEmployeesUI();
         }
 
         void OwnedEmployeesUI()
         {
-            this.ownedEmployersText.text = $"Current owned {this._hire.Miner} miner(s), {this._hire.LumberJack} lumberjack(s), {this._hire.Hunter} hunter(s)";
+            this.ownedEmployersText.text = $"Current owned {this.miner.EmployeeUnit} miner(s), {this.lumberJack.EmployeeUnit} lumberjack(s), {this.hunter.EmployeeUnit} hunter(s)";
         }
 
 
         public void PurchaseMiner()
         {
-            if (!this.purchaseMiner.IsAffordable()) return;
+            if (!this.purchaseMiner.IsAffordable() || miner.CheckIfCap()) return;
             this.purchaseMiner.resource.Owned -= this.purchaseMiner.cost;
-            this._hire.Miner++;
+            this.miner.EmployeeUnit++;
             OwnedEmployeesUI();
         }
 
         public void PurchaseLumberjack()
         {
             
-            if (!this.purchaseLumberjack.IsAffordable()) return;
+            if (!this.purchaseLumberjack.IsAffordable() || lumberJack.CheckIfCap()) return;
             this.purchaseLumberjack.resource.Owned -= this.purchaseLumberjack.cost;
-            this._hire.LumberJack++;
+            this.lumberJack.EmployeeUnit++;
             OwnedEmployeesUI();
             
         }
 
         public void PurchaseHunter()
         {
-            if (!this.purchaseHunter.IsAffordable()) return;
+            if (!this.purchaseHunter.IsAffordable() || hunter.CheckIfCap()) return;
             this.purchaseHunter.resource.Owned -= this.purchaseHunter.cost;
-            this._hire.Hunter++;
+            this.hunter.EmployeeUnit++;
             OwnedEmployeesUI();
         }
     }

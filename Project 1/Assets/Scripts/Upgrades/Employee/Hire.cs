@@ -1,37 +1,26 @@
-﻿using System.Runtime.CompilerServices;
-using System.Runtime.Remoting.Messaging;
-using UnityEngine;
+﻿using UnityEngine;
+using Upgrades.Character;
 
-public class Hire : MonoBehaviour
+[System.Serializable]
+public class Hire
 {
-    public int LumberJack
+    public EmployeeType employeeType;
+
+    public int EmployeeUnit
     {
-        get => PlayerPrefs.GetInt("lumberJack", 0);
-        set => PlayerPrefs.SetInt("lumberJack", value);
+        get => PlayerPrefs.GetInt("EmployeeUnit" + employeeType, 0);
+        set => PlayerPrefs.SetInt("EmployeeUnit" + employeeType, value);
     }
 
-    public int Miner
+    public bool CheckIfCap()
     {
-        get => PlayerPrefs.GetInt("miner", 0);
-        set => PlayerPrefs.SetInt("miner", value);
+        return EmployeeUnit >= EmployeeCap;
     }
 
-    public int Hunter
+    public int EmployeeCap
     {
-        get => PlayerPrefs.GetInt("hunter", 0);
-        set => PlayerPrefs.SetInt("hunter", value);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            LumberJack++;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            print(LumberJack);
-        }
+        get => PlayerPrefs.GetInt("EmployeeCap" + employeeType, 5);
+        set => PlayerPrefs.SetInt("EmployeeCap" + employeeType, value);
     }
 
 }
