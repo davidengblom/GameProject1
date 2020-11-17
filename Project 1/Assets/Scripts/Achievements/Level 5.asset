@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2d0fbcb5a5646c98d5ea9a46fe36a3, type: 3}
   m_Name: Level 5
   m_EditorClassIdentifier: 
-  resourceReward: {fileID: 0}
-  requirement: 0
-  reward: 0
+  resourceReward: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
+  requirement: 5
+  reward: 100000
