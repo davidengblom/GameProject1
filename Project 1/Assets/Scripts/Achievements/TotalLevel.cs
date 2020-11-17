@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using HUD;
+using UnityEngine;
+using Upgrades.Character;
 
 namespace Achievements
 {
@@ -8,5 +10,22 @@ namespace Achievements
         public Resource resourceReward;
         public int requirement;
         public int reward = 0;
+
+        public bool RequirementMet()
+        {
+            var totalLevel = 0;
+
+            foreach (var level in FindObjectsOfType<ExperienceUI>())
+            {
+                totalLevel += level._experience.CurrentLevel;
+            }
+            return totalLevel >= this.requirement;
+        }
+
+        public int HasBeenRewarded
+        {
+            get => PlayerPrefs.GetInt(this.name, 0);
+            set => PlayerPrefs.SetInt(this.name, value);
+        }
     }
 }
