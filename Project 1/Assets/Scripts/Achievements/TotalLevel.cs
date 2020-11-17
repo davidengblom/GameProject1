@@ -2,7 +2,7 @@
 
 namespace Achievements
 {
-    [CreateAssetMenu(fileName = "New Level Achievement", menuName = "New Achievement/Level Achievement")]
+    [CreateAssetMenu(fileName = "New Level Achievement", menuName = "New Achievement/Total Level Achievement")]
     public class TotalLevel : ScriptableObject
     {
         public Resource resourceReward;

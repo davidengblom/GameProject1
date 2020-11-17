@@ -3,7 +3,7 @@ using Upgrades.Character;
 
 namespace Achievements
 {
-    [CreateAssetMenu(fileName = "New Unit Achievement", menuName = "New Achievement/Unit Achievement")]
+    [CreateAssetMenu(fileName = "New Unit Achievement", menuName = "New Achievement/Unit Level Achievement")]
     public class UnitLevel : ScriptableObject
     {
         public int requirement;
