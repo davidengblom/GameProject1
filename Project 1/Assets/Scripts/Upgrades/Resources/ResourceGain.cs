@@ -2,6 +2,7 @@
 using HUD;
 using UnityEngine;
 using Upgrades.Character;
+using Upgrades.Employee;
 
 public class ResourceGain : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class ResourceGain : MonoBehaviour
 
     private void Update()
     {
-        this.employee.AutoProduce(this.resource);
+        //this.employee.AutoProduce(this.resource);
     }
 
     public void EmployeeUpgrade()

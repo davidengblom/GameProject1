@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92231c22b37a143d18a549a8ef7824f9, type: 3}
   m_Name: Miner Level 3
   m_EditorClassIdentifier: 
-  requirement: 0
-  reward: 0
-  resourceReward: {fileID: 0}
+  requirement: 3
+  reward: 10000
+  resourceReward: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
   employeeType: 0
