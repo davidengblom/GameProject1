@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: 5}
+  m_AnchoredPosition: {x: -99, y: 5.6}
   m_SizeDelta: {x: 75, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3145084934893053228
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -66,9 +66,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c0dea4f7d02df984baa58a0440b52016, type: 3}
     m_FontSize: 28
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -90,8 +90,7 @@ GameObject:
   - component: {fileID: 3145084935011340515}
   - component: {fileID: 3145084935011340526}
   - component: {fileID: 3145084935011340513}
-  - component: {fileID: 3145084935011340512}
-  - component: {fileID: 3145084935011340527}
+  - component: {fileID: 656398252}
   m_Layer: 5
   m_Name: GoldHen
   m_TagString: Untagged
@@ -140,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -148,9 +147,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c0dea4f7d02df984baa58a0440b52016, type: 3}
     m_FontSize: 28
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -161,7 +160,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
---- !u!114 &3145084935011340512
+--- !u!114 &656398252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,23 +169,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3145084935011340514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bbed80565b28024485442a04e26e077, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e0719b34a52df4598983db92d37a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionAmount: 1
-  productionTime: 1
-  resourceAmountText: {fileID: 3145084935011340513}
-  resourceTypeText: {fileID: 3145084934893053231}
-  resource: {fileID: 11400000, guid: 5d21141425ca3455bb45591e4420bdfb, type: 2}
---- !u!114 &3145084935011340527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3145084935011340514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 032f1715606954f41a9d28467838a4c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  employee:
+    type: 3
+    productionTime: 0
+    timer: 0
+    resource: {fileID: 11400000, guid: 5d21141425ca3455bb45591e4420bdfb, type: 2}
