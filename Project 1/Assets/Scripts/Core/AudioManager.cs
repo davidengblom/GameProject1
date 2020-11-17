@@ -56,6 +56,8 @@ public class AudioManager : MonoBehaviour
                 this.sounds[i].SetSource(_go.AddComponent<AudioSource>(), j);
             }
         }
+
+       // PlaySound("Music");
     }
 
 
