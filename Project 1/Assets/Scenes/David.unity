@@ -515,7 +515,7 @@ MonoBehaviour:
   employee:
     type: 1
     productionTime: 1
-    timer: 1
+    timer: 0
     resource: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
 --- !u!224 &213760323 stripped
 RectTransform:
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   employee:
     type: 0
     productionTime: 1
-    timer: 1
+    timer: 0
     resource: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
 --- !u!1001 &1079704586
 PrefabInstance:
@@ -1845,7 +1845,9 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3145084935011340512, guid: bc043235402e55d479fdc9eca83c3cc8, type: 3}
+    - {fileID: 3145084935011340527, guid: bc043235402e55d479fdc9eca83c3cc8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc043235402e55d479fdc9eca83c3cc8, type: 3}
 --- !u!1 &1117764107
 GameObject:
@@ -2724,7 +2726,21 @@ MonoBehaviour:
   currentClickUpgradesText: {fileID: 39422399}
   employeeLevel: {fileID: 0}
   clickLevel: {fileID: 0}
+  hunterUpgrade:
+    type: 1
+  lumberUpgrade:
+    type: 2
+  minerUpgrade:
+    type: 0
+  stone: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
+  wood: {fileID: 11400000, guid: d5567aee9d65d43e189505b2c42a7ac5, type: 2}
+  food: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
   hunter:
+    type: 1
+    productionTime: 0
+    timer: 0
+    resource: {fileID: 0}
+  miner:
     type: 0
     productionTime: 0
     timer: 0
@@ -2734,14 +2750,6 @@ MonoBehaviour:
     productionTime: 0
     timer: 0
     resource: {fileID: 0}
-  miner:
-    type: 0
-    productionTime: 0
-    timer: 0
-    resource: {fileID: 0}
-  stone: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
-  wood: {fileID: 11400000, guid: d5567aee9d65d43e189505b2c42a7ac5, type: 2}
-  food: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
 --- !u!224 &1725166580 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3145084935011340515, guid: bc043235402e55d479fdc9eca83c3cc8, type: 3}
@@ -2767,7 +2775,7 @@ MonoBehaviour:
   employee:
     type: 2
     productionTime: 1
-    timer: 1
+    timer: 0
     resource: {fileID: 11400000, guid: d5567aee9d65d43e189505b2c42a7ac5, type: 2}
 --- !u!1 &1908079824
 GameObject:
@@ -3923,11 +3931,11 @@ MonoBehaviour:
     cost: 0
   ownedEmployersText: {fileID: 2970597672309823464}
   hunter:
-    employeeType: 0
+    employeeType: 1
   miner:
     employeeType: 0
   lumberJack:
-    employeeType: 0
+    employeeType: 2
 --- !u!222 &2970597672711367021
 CanvasRenderer:
   m_ObjectHideFlags: 0

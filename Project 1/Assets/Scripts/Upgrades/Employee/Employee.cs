@@ -9,21 +9,15 @@ namespace Upgrades.Employee
     {
         public EmployeeType type;
         public float productionTime;
-        public float timer;
+        [HideInInspector] public float timer;
         public Resource resource;
+        
         public bool ShouldProduce => Time.time - this.timer > this.productionTime;
 
         public int EmployeeLevel
         {
-            get => PlayerPrefs.GetInt("EmployeeLevel" + this.type, 1);
+            get => PlayerPrefs.GetInt("EmployeeLevel" + this.type, 0);
             set => PlayerPrefs.SetInt("EmployeeLevel" + this.type, value);
-        }
-
-        public void AutoProduce()
-        {
-            if (!this.ShouldProduce) return;
-            this.timer = Time.time;
-            this.resource.Owned += this.resource.amountPerClick * this.EmployeeLevel;
         }
     }
 }
