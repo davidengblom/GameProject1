@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Achievements
 {
     public class TotalLevelAchievement : MonoBehaviour, IPointerClickHandler
     {
         public TotalLevel totalLevel;
+        public Image achievementImage;
+        public Text achievementText;
 
         void ClaimReward()
         {
@@ -15,9 +19,21 @@ namespace Achievements
             this.totalLevel.resourceReward.Owned += this.totalLevel.reward;
             this.totalLevel.HasBeenRewarded = 1;
         }
+
         public void OnPointerClick(PointerEventData eventData)
         {
             ClaimReward();
+        }
+
+        void Update()
+        {
+            UpdateUI();
+        }
+
+        void UpdateUI()
+        {
+            this.achievementImage.fillAmount = this.totalLevel.CalculateTotalLevel() / this.totalLevel.requirement;
+            this.achievementText.text = $"{Mathf.Clamp(this.totalLevel.CalculateTotalLevel(), 0, this.totalLevel.requirement)}/{this.totalLevel.requirement}";
         }
     }
 }

@@ -13,13 +13,19 @@ namespace Achievements
 
         public bool RequirementMet()
         {
+            return CalculateTotalLevel() >= this.requirement;
+        }
+
+        public float CalculateTotalLevel()
+        {
             var totalLevel = 0;
 
             foreach (var level in FindObjectsOfType<ExperienceUI>())
             {
                 totalLevel += level._experience.CurrentLevel;
             }
-            return totalLevel >= this.requirement;
+
+            return totalLevel;
         }
 
         public int HasBeenRewarded
