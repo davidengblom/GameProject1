@@ -19,6 +19,7 @@ public class Market : MonoBehaviour
     private int amount;
 
     public int costMultiplier = 2;
+    public int goldCostMultiplier = 20;
     private int costAmount = 0;
     private string costAmountToText = "0";
 
@@ -36,12 +37,16 @@ public class Market : MonoBehaviour
     private void Update()
     {
         UpdateText();
-
     }
 
     void CalcCost()
     {
         costAmount = amount * costMultiplier;   
+    }
+
+    void CalcGoldCost()
+    {
+        costAmount = amount * goldCostMultiplier;
     }
 
     void UpdateText()
@@ -54,10 +59,20 @@ public class Market : MonoBehaviour
 
     public void GetInput(string input)
     {
-        inputField.text = input;
-        userInput = input;
-        amount = Int32.Parse(userInput);
-        CalcCost();
+        if (resource.name == "Gold")
+        {
+            inputField.text = input;
+            userInput = input;
+            amount = Int32.Parse(userInput);
+            CalcGoldCost();
+        }
+        else
+        {
+            inputField.text = input;
+            userInput = input;
+            amount = Int32.Parse(userInput);
+            CalcCost();
+        }
     }
 
     public void ConfirmPurchase()
@@ -75,7 +90,7 @@ public class Market : MonoBehaviour
 
     public void ChooseResource(Resource chooseResource)
     {
-        this.resource = chooseResource;
+        resource = chooseResource;
 
         if (this.resource.name == food.name) {
             resourceCost1 = stone;
