@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UI;
+using Upgrades.Character;
+using Upgrades.Employee;
 
 namespace HUD
 {
@@ -12,26 +15,28 @@ namespace HUD
         public Text employeeLevel;
         public Text clickLevel;
 
-        public Employee hunter;
-        public Employee lumberjack;
-        public Employee miner;
+        private AutomaticProduction[] _automaticProductions;
 
-        public Resource stone;
-        public Resource wood;
-        public Resource food;
+        private int[] _amountText = new int[3];
+
+        public Upgrade hunterUpgrade, lumberUpgrade, minerUpgrade;
+        
+        public Resource stone, wood, food;
+        public Employee hunter, miner, lumberjack;
 
         private void Start()
         {
+            this._automaticProductions = FindObjectsOfType<AutomaticProduction>();
             UpdateData();
         }
 
         public void UpdateData()
         {
-            // this.currentUpgradesText.text =
-            //     $"{this.hunter.ProductionAmount} per Hunter, {this.lumberjack.ProductionAmount} per Lumberjack, {this.miner.ProductionAmount} per Miner";
-            //
-            // this.currentClickUpgradesText.text =
-            //     $"{this.food.amountPerClick} Food per click, {this.wood.amountPerClick} Wood per click, {this.stone.amountPerClick} Stone per click";
+            this.currentUpgradesText.text =
+                $"{this.hunterUpgrade.AssignAmount(EmployeeType.Hunter)} per Hunter, {this.lumberUpgrade.AssignAmount(EmployeeType.Lumberjack)} per Lumberjack, {this.minerUpgrade.AssignAmount(EmployeeType.Miner)} per Miner";
+            
+            this.currentClickUpgradesText.text =
+                $"{this.food.amountPerClick} Food per click, {this.wood.amountPerClick} Wood per click, {this.stone.amountPerClick} Stone per click";
         }
     }
 }
