@@ -13,7 +13,6 @@ public class Employee
 
     public int EmployeeLevel
     {
-        
         get => PlayerPrefs.GetInt("EmployeeLevel" + this.type, 1);
         set => PlayerPrefs.SetInt("EmployeeLevel" + this.type, value);
     }
