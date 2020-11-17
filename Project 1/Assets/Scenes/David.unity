@@ -490,10 +490,33 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   currentUpgrades: {fileID: 1715816071}
   employeeLevel: 1
   clickLevel: 1
   amount: 2
+--- !u!1 &174515734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8675491148157909086, guid: 49783eec681c48b48b8131fb98876c4f, type: 3}
+  m_PrefabInstance: {fileID: 8675491148078432540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &174515735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174515734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e0719b34a52df4598983db92d37a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employee:
+    type: 1
+    productionTime: 1
+    timer: 1
+    resource: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
 --- !u!224 &213760323 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8675491148157909087, guid: 49783eec681c48b48b8131fb98876c4f, type: 3}
@@ -719,6 +742,7 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   currentUpgrades: {fileID: 1715816071}
   employeeLevel: 1
   clickLevel: 1
@@ -902,6 +926,7 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   currentUpgrades: {fileID: 1715816071}
   employeeLevel: 1
   clickLevel: 1
@@ -1349,6 +1374,7 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   currentUpgrades: {fileID: 1715816071}
   employeeLevel: 1
   clickLevel: 1
@@ -1697,10 +1723,33 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   currentUpgrades: {fileID: 1715816071}
   employeeLevel: 1
   clickLevel: 1
   amount: 2
+--- !u!1 &1061230391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1294611888092286782, guid: b116ba12685bb114887398de4df44ead, type: 3}
+  m_PrefabInstance: {fileID: 1294611888075857405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1061230392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061230391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e0719b34a52df4598983db92d37a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employee:
+    type: 0
+    productionTime: 1
+    timer: 1
+    resource: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
 --- !u!1001 &1079704586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2679,14 +2728,17 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   lumberjack:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   miner:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   stone: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
   wood: {fileID: 11400000, guid: d5567aee9d65d43e189505b2c42a7ac5, type: 2}
   food: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
@@ -2695,6 +2747,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3145084935011340515, guid: bc043235402e55d479fdc9eca83c3cc8, type: 3}
   m_PrefabInstance: {fileID: 1079704586}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1867315236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5262062907470496726, guid: ff90e0fa89454c64f9950d3ff4b86824, type: 3}
+  m_PrefabInstance: {fileID: 5262062906800637195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1867315237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867315236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e0719b34a52df4598983db92d37a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employee:
+    type: 2
+    productionTime: 1
+    timer: 1
+    resource: {fileID: 11400000, guid: d5567aee9d65d43e189505b2c42a7ac5, type: 2}
 --- !u!1 &1908079824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,6 +2908,7 @@ MonoBehaviour:
     type: 0
     productionTime: 0
     timer: 0
+    resource: {fileID: 0}
   currentUpgrades: {fileID: 1715816071}
   employeeLevel: 1
   clickLevel: 1
@@ -3117,7 +3192,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1294611888092286776, guid: b116ba12685bb114887398de4df44ead, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b116ba12685bb114887398de4df44ead, type: 3}
 --- !u!114 &2970597672012759041
 MonoBehaviour:
@@ -3846,6 +3922,12 @@ MonoBehaviour:
     resource: {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
     cost: 0
   ownedEmployersText: {fileID: 2970597672309823464}
+  hunter:
+    employeeType: 0
+  miner:
+    employeeType: 0
+  lumberJack:
+    employeeType: 0
 --- !u!222 &2970597672711367021
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4496,7 +4578,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumberjack
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5262062907470496724, guid: ff90e0fa89454c64f9950d3ff4b86824, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff90e0fa89454c64f9950d3ff4b86824, type: 3}
 --- !u!1001 &8675491148078432540
 PrefabInstance:
@@ -4597,5 +4680,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8675491148157909082, guid: 49783eec681c48b48b8131fb98876c4f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 49783eec681c48b48b8131fb98876c4f, type: 3}
