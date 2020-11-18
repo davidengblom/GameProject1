@@ -9,17 +9,19 @@ namespace Core
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                ResetStuff();
+                ResetGame();
             }
         }
 
-        void ResetStuff()
+        void ResetGame()
         {
             foreach (var monoBehaviour in FindObjectsOfType<MonoBehaviour>())
             {
-                
+                if (monoBehaviour is IReset res)
+                {
+                    res.Reset();
+                }
             }
         }
     }
-    
 }
