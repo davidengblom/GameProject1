@@ -39,7 +39,7 @@ namespace Achievements
             print(this.unitLevel.employeeType);
             if (this.unitLevel.experience.employeeType == this.unitLevel.employeeType)
             {
-                this.achievementImage.fillAmount = Mathf.RoundToInt(this.unitLevel.experience.CurrentLevel / this.unitLevel.requirement);
+                this.achievementImage.fillAmount = this.unitLevel.experience.CurrentLevel / this.unitLevel.requirement;
                 this.achievementText.text = $"{Mathf.Clamp(this.unitLevel.experience.CurrentLevel, 0, this.unitLevel.requirement)}/{this.unitLevel.requirement}";
             }
         }
