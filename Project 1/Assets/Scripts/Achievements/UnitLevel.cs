@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Upgrades.Character;
 
 namespace Achievements
@@ -6,16 +7,17 @@ namespace Achievements
     [CreateAssetMenu(fileName = "New Unit Achievement", menuName = "New Achievement/Unit Level Achievement")]
     public class UnitLevel : ScriptableObject
     {
-        public int requirement;
+        public float requirement;
         public int reward = 0;
         public Resource resourceReward;
         public EmployeeType employeeType;
 
-        Experience _experience;
+        [NonSerialized]
+        public Experience experience = new Experience();
 
         public bool RequirementMet()
         {
-            return this._experience.employeeType == this.employeeType && this._experience.CurrentLevel >= this.requirement;
+            return this.experience.employeeType == this.employeeType && this.experience.CurrentLevel >= this.requirement;
         }
 
         public int HasBeenRewarded
