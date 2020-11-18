@@ -11,6 +11,10 @@ namespace Achievements
         public Image achievementImage;
         public Text achievementText;
 
+        void Awake()
+        {
+            CheckRequirement();
+        }
 
         void Start()
         {
@@ -34,16 +38,20 @@ namespace Achievements
         void Update()
         {
             UpdateUI();
+            CheckRequirement();
+        }
+
+        void CheckRequirement()
+        {
             if (this.unitLevel.RequirementMet())
             {
                 this.transform.parent = FindObjectOfType<CompletedAchievement>().transform;
+                FindObjectOfType<VerticalLayoutGroupHeight>().UpdateScrollRectHeight();
             }
         }
 
         void UpdateUI()
         {
-            //if(this.unitLevel.experience.employeeType != this.unitLevel.employeeType) return;
-            print(this.unitLevel.name + "  " + this.unitLevel.experience.CurrentLevel + "    " + this.unitLevel.experience.employeeType);
             this.achievementImage.fillAmount = this.unitLevel.experience.CurrentLevel / this.unitLevel.requirement;
             this.achievementText.text = $"{Mathf.Clamp(this.unitLevel.experience.CurrentLevel, 0, this.unitLevel.requirement)}/{this.unitLevel.requirement}";
         }

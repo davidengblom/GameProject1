@@ -18,7 +18,6 @@ namespace Achievements
         public bool RequirementMet()
         {
             return this.experience.GetCurrentLevel(this.employeeType) >= this.requirement;
-            //return this.experience.employeeType == this.employeeType && this.experience.CurrentLevel >= this.requirement;
         }
 
         public int HasBeenRewarded
