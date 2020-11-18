@@ -9,8 +9,8 @@ namespace Upgrades.Employee
     {
         public EmployeeType type;
 
-        private AutomaticProduction[] _autoProductions = new AutomaticProduction[3];
-
+        public AutomaticProduction autoProductions;
+        
         public int Amount
         {
             get => PlayerPrefs.GetInt("Upgrade" + this.type, 0);
@@ -20,7 +20,7 @@ namespace Upgrades.Employee
         public float AssignAmount(EmployeeType type)
         {
             if (this.type != type) return 0;
-            var autoProd = new AutomaticProduction();;
+            var autoProd = this.autoProductions;
             return this.Amount += autoProd.ResourceAmountPerSecond();
         }
     }
