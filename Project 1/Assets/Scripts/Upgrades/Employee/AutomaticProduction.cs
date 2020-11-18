@@ -33,6 +33,7 @@ namespace Upgrades.Employee
         private void AutoProduce()
         {
             if (!this.employee.ShouldProduce) return;
+            this.employee.resource._experience.GainExperience(this.employee.resource.expGainPerClick, this.employee.type);
             this.employee.timer = Time.time;
             this.employee.resource.Owned += ResourceAmountPerSecond();
             this._text.text = this.employee.resource.Owned.ToString();
