@@ -2,6 +2,7 @@
 using HUD;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Upgrades.Employee
 {
@@ -12,6 +13,7 @@ namespace Upgrades.Employee
         public int multiplier;
         public float costPercentIncrease;
 
+        public Text costText;
         public AutomaticProduction autoProd;
         private UpgradesUI _ui;
 
@@ -24,6 +26,7 @@ namespace Upgrades.Employee
         private void Start()
         {
             this._ui = FindObjectOfType<UpgradesUI>();
+            UpdateCostText();
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -34,9 +37,11 @@ namespace Upgrades.Employee
                 this.CostMultiplier *= (this.costPercentIncrease / 100 + 1);
                 this.autoProd.ProductionMultiplier += this.multiplier;
                 this.resourceToProduce.ClickLevel += this.multiplier;
+                UpdateCostText();
                 this._ui.UpdateData();
             }
             
         }
+        private void UpdateCostText() => this.costText.text = "Cost" + " " + (int) this.CostMultiplier + " " + this.purchasable.resource;
     }
 }
