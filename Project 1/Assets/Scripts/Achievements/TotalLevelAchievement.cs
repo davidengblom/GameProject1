@@ -27,11 +27,12 @@ namespace Achievements
 
         void Update()
         {
-            UpdateUI();
             if (this.totalLevel.RequirementMet())
             {
                 this.transform.parent = FindObjectOfType<CompletedAchievement>().transform;
             }
+
+            UpdateUI();
         }
 
         void UpdateUI()
