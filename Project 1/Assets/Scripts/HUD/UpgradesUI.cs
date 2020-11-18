@@ -7,36 +7,34 @@ using Upgrades.Employee;
 
 namespace HUD
 {
-    public class UpgradesUI : MonoBehaviour
+    public class UpgradesUI : MonoBehaviour,IReset
     {
         public Text currentUpgradesText;
         public Text currentClickUpgradesText;
 
-        public Text employeeLevel;
-        public Text clickLevel;
-
-        private AutomaticProduction[] _automaticProductions;
-
-        private int[] _amountText = new int[3];
-
         public Upgrade hunterUpgrade, lumberUpgrade, minerUpgrade;
         
         public Resource stone, wood, food;
-        public Employee hunter, miner, lumberjack;
 
         private void Start()
         {
-            this._automaticProductions = FindObjectsOfType<AutomaticProduction>();
             UpdateData();
         }
 
         public void UpdateData()
         {
             this.currentUpgradesText.text =
-                $"{this.hunterUpgrade.AssignAmount(EmployeeType.Hunter)} per Hunter, {this.lumberUpgrade.AssignAmount(EmployeeType.Lumberjack)} per Lumberjack, {this.minerUpgrade.AssignAmount(EmployeeType.Miner)} per Miner";
+                $"{this.hunterUpgrade.autoProductions.ResourceAmountPerSecond()} Food /s, {this.lumberUpgrade.autoProductions.ResourceAmountPerSecond()} Wood /s, {this.minerUpgrade.autoProductions.ResourceAmountPerSecond()} Stone /s";
             
             this.currentClickUpgradesText.text =
-                $"{this.food.amountPerClick} Food per click, {this.wood.amountPerClick} Wood per click, {this.stone.amountPerClick} Stone per click";
+                $"{this.food.ClickLevel} Food per click, {this.wood.ClickLevel} Wood per click, {this.stone.ClickLevel} Stone per click";
+        }
+
+        public void Reset()
+        {
+            this.hunterUpgrade.Amount = 0;
+            this.lumberUpgrade.Amount = 0;
+            this.minerUpgrade.Amount = 0;
         }
     }
 }

@@ -20,9 +20,9 @@ namespace Achievements
         {
             var totalLevel = 0;
 
-            foreach (var level in FindObjectsOfType<ExperienceUI>())
+            foreach (var level in FindObjectsOfType<AchievementReference>())
             {
-                totalLevel += level._experience.CurrentLevel;
+                totalLevel += level.GetComponent<ExperienceUI>()._experience.CurrentLevel;
             }
 
             return totalLevel;
