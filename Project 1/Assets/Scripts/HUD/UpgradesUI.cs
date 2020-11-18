@@ -7,7 +7,7 @@ using Upgrades.Employee;
 
 namespace HUD
 {
-    public class UpgradesUI : MonoBehaviour
+    public class UpgradesUI : MonoBehaviour,IReset
     {
         public Text currentUpgradesText;
         public Text currentClickUpgradesText;
@@ -28,6 +28,13 @@ namespace HUD
             
             this.currentClickUpgradesText.text =
                 $"{this.food.ClickLevel} Food per click, {this.wood.ClickLevel} Wood per click, {this.stone.ClickLevel} Stone per click";
+        }
+
+        public void Reset()
+        {
+            this.hunterUpgrade.Amount = 0;
+            this.lumberUpgrade.Amount = 0;
+            this.minerUpgrade.Amount = 0;
         }
     }
 }
