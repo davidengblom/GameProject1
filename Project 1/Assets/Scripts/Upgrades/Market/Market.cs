@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,23 +14,26 @@ public class Market : MonoBehaviour
     Resource resource;
     Resource resourceCost1;
     Resource resourceCost2;
-    
-
-    private string userInput;
-    private float amount;
 
     public float costMultiplier = 2;
     public float goldCostMultiplier = 20;
     public float crystalCostMultiplier = 2;
     public int maxCrystalPerDay = 20;
-    private float costAmount = 0;
-    private float dailyCrystalCount = 0;
+    
+    private string userInput;
+    private float amount;
     private string costAmountToText;
+    private float costAmount = 0;
+    private float crystalCostAmount = 1;
+    private float crystalCostAmountDisplayed = 1;
+    private float dailyCrystalCount = 0;
 
     public Text resourceToBuyTitleText;
     public InputField inputField;
     public Text costAmountText;
     public Text costResourceType;
+    public Text crystalButtonText;
+    public Text dailyCapText;
 
     private void Start()
     {
@@ -45,70 +47,62 @@ public class Market : MonoBehaviour
         UpdateText();
     }
 
-    void CalcCost()
+    void CalcCost(float i)
     {
-        costAmount = (amount * costMultiplier);   
+        costAmount = i * costMultiplier;   
     }
 
-    void CalcGoldCost()
+    void CalcGoldCost(float i)
     {
-        costAmount = amount * goldCostMultiplier;
+        costAmount = i * goldCostMultiplier;
     }
 
-    void CalcCrystalCost()
+    void CalcCrystalCost(float i)
     {
-        //TODO crystal cost gold, the first crystal should cost 1 gold, then it should be multiplied by 2 for every crystal you buy.
-        // 1 kristall = 2 gold (1 + 3) * 2 - 6 = 2    1 + 1^2 - 2 = 2
-        // 2 kristall = 4 gold (2 + 3) * 2 - 6 = 4    2 + 1^2 - 2 = 4
-        // 3 kristall = 8 gold (3 + 3) * 2 - 4 = 3    3 * 1^2 = 6
-        // 4 kristall = 8 gold (3 + 1) * 2 - 2 = 3    3 * 1^2 = 6
-
-        costAmount = Mathf.Pow(amount * 1, crystalCostMultiplier);
-        
-        /*if (dailyCrystalCount <= maxCrystalPerDay) {
-            costAmount = Mathf.Pow(amount * 1, crystalCostMultiplier);
-            dailyCrystalCount += amount;
+        if (dailyCrystalCount < 1) 
+        {
+            crystalCostAmount = Mathf.Pow(i , crystalCostMultiplier);
+            crystalCostAmountDisplayed = Mathf.Pow(i + 1 , crystalCostMultiplier);
         }
         else
         {
-            Debug.Log("Daily caped reached " + dailyCrystalCount + " cyrstal.");
-        }*/
-
+            crystalCostAmount = Mathf.Pow(dailyCrystalCount * 1, crystalCostMultiplier);
+            crystalCostAmountDisplayed = Mathf.Pow((1 + dailyCrystalCount) * 1 , crystalCostMultiplier);
+        }
     }
 
     void UpdateText()
     {
-        costAmountToText = costAmount.ToString("0");
+        costAmountToText = costAmount.ToString();
         resourceToBuyTitleText.text = this.resource.name;
         costResourceType.text = resourceCost1.name;
         costAmountText.text = costAmountToText;
-    }
+        crystalButtonText.text = $"Buy 1 {crystal.name} for {crystalCostAmountDisplayed} {resourceCost1.name}";
+        dailyCapText.text = $"Daily cap: {dailyCrystalCount}/{maxCrystalPerDay}";
+    }    
 
     public void GetInput(string input)
     {
-        if (resource.name == "Gold")
-        {
+        if (resource.name == gold.name) {
             inputField.text = input;
             userInput = input;
-            amount = Int32.Parse(userInput);
-            CalcGoldCost();
-        }
-        else if (resource.name == "Crystal")
-        {
+            CalcGoldCost(amount = Convert.ToSingle(userInput));
+        } else {
             inputField.text = input;
             userInput = input;
-            amount = Int32.Parse(userInput);
-            CalcCrystalCost();
-        }
-        else
-        {
-            inputField.text = input;
-            userInput = input;
-            amount = Int32.Parse(userInput);
-            CalcCost();
+            CalcCost(amount = Convert.ToSingle(userInput));
         }
     }
 
+    public void BuyCrystal()
+    {
+        if(!CanAffordCrystal() || dailyCrystalCount >= maxCrystalPerDay) return;
+        dailyCrystalCount++;
+        amount++;
+        CalcCrystalCost(amount);
+        crystal.Owned++;
+        resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
+    }
     public void ConfirmPurchase()
     {
         if (!CanAfford()) return;
@@ -143,9 +137,10 @@ public class Market : MonoBehaviour
         }
     }
 
-    bool CanAfford()
-    {
-        if (resourceCost1.Owned >= costAmount) { return true; }
-        return false;  
+    bool CanAffordCrystal() {
+        if (resourceCost1.Owned >= crystalCostAmount) { return true; } return false;
+    }
+    bool CanAfford() {
+        if (resourceCost1.Owned >= costAmount) { return true; } return false;  
     }
 }
