@@ -21,7 +21,6 @@ namespace Upgrades.Employee
         {
             this._hire.employeeType = this.employee.type;
             this._text = GetComponent<Text>();
-            // AutoProduce();
             this._text.text = this.employee.resource.Owned.ToString();
         }
 
@@ -33,7 +32,7 @@ namespace Upgrades.Employee
         private void AutoProduce()
         {
             if (!this.employee.ShouldProduce) return;
-            this.employee.resource._experience.GainExperience(this.employee.resource.expGainPerClick, this.employee.type);
+            this.employee.resource._experience.GainExperience(this.employee.resource.expGainPerClick * this._hire.EmployeeUnit, this.employee.type);
             this.employee.timer = Time.time;
             this.employee.resource.Owned += ResourceAmountPerSecond();
             this._text.text = this.employee.resource.Owned.ToString();
@@ -41,7 +40,7 @@ namespace Upgrades.Employee
 
         public int ResourceAmountPerSecond()
         {
-            return (this._hire.EmployeeUnit * this.ProductionMultiplier) + (this.employee.resource.amountPerClick * this.employee.EmployeeLevel);
+            return (this._hire.EmployeeUnit * this.ProductionMultiplier) + (this.employee.resource.amountPerClick * this._hire.EmployeeUnit);
         }
     }
 }
