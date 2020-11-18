@@ -22,18 +22,21 @@ public class Market : MonoBehaviour
     public int costMultiplier = 2;
     public int goldCostMultiplier = 20;
     public int crystalCostMultiplier = 2;
+    public int maxCrystalPerDay = 20;
     private int costAmount = 0;
-    private string costAmountToText = "0";
+    private int currentAmount = 0;
+    private string costAmountToText;
 
     public Text resourceToBuyTitleText;
     public InputField inputField;
-    public Text enterAmountText;
     public Text costAmountText;
     public Text costResourceType;
 
     private void Start()
     {
-        inputField.text = "0";
+        resource = stone;
+        resourceCost1 = stone;
+        resourceCost2 = stone;
     }
 
     private void Update()
@@ -53,19 +56,26 @@ public class Market : MonoBehaviour
 
     void CalcCrystalCost()
     {
+        //TODO crystal cost gold, the first crystal should cost 1 gold, then it should be multiplied by 2 for every crystal you buy.
+        // 1 kristall = 2 gold
+        // 2 kristall = 4 gold
+        // 3 kristall = 8 gold
+
         costAmount = amount * crystalCostMultiplier;
+
+        //currentAmount += amount;
+        /*if (currentAmount <= maxCrystalPerDay) {
+            costAmount = amount * crystalCostMultiplier;
+            crystalCostMultiplier *= crystalCostMultiplier; 
+        }*/
+
     }
 
     void UpdateText()
     {
         costAmountToText = costAmount.ToString();
         resourceToBuyTitleText.text = this.resource.name;
-        
-        if (resource.name == "Crystal") {
-            costResourceType.text = gold.name;
-        }else {
-            costResourceType.text = resourceCost1.name;
-        }
+        costResourceType.text = resourceCost1.name;
         costAmountText.text = costAmountToText;
     }
 
@@ -102,6 +112,7 @@ public class Market : MonoBehaviour
 
     public void ResetAmountText()
     {
+        this.resourceCost1 = null;
         costAmount = 0;
         inputField.text = "0";
     }
