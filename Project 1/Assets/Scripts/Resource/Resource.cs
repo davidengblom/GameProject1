@@ -10,7 +10,7 @@ public class Resource : ScriptableObject
     public Experience _experience;
     public int ClickLevel
     {
-        get => PlayerPrefs.GetInt("ClickLevel" + this.name, 1);
+        get => PlayerPrefs.GetInt("ClickLevel" + this.name, this.amountPerClick);
         set => PlayerPrefs.SetInt("ClickLevel" + this.name, value);
     }
     
