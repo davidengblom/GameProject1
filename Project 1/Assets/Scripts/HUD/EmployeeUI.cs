@@ -58,6 +58,7 @@ namespace HUD
             this.hunter.EmployeeUnit = 0;
             this.miner.EmployeeUnit = 0;
             this.lumberJack.EmployeeUnit = 0;
+            OwnedEmployeesUI();
         }
     }
 }
