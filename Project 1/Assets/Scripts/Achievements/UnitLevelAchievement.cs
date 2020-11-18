@@ -10,6 +10,13 @@ namespace Achievements
         public UnitLevel unitLevel;
         public Image achievementImage;
         public Text achievementText;
+
+
+        void Start()
+        {
+            this.unitLevel.experience.employeeType = this.unitLevel.employeeType;
+        }
+
         void CanClaimReward()
         {
             print(this.unitLevel.name);
@@ -35,6 +42,8 @@ namespace Achievements
 
         void UpdateUI()
         {
+            //if(this.unitLevel.experience.employeeType != this.unitLevel.employeeType) return;
+            print(this.unitLevel.name + "  " + this.unitLevel.experience.CurrentLevel + "    " + this.unitLevel.experience.employeeType);
             this.achievementImage.fillAmount = this.unitLevel.experience.CurrentLevel / this.unitLevel.requirement;
             this.achievementText.text = $"{Mathf.Clamp(this.unitLevel.experience.CurrentLevel, 0, this.unitLevel.requirement)}/{this.unitLevel.requirement}";
         }
