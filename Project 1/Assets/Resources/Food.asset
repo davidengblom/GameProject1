@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
-  amountPerClick: 2
+  amountPerClick: 10000
   expGainPerClick: 1
   _experience:
     incrementFactorPerLevel: 2

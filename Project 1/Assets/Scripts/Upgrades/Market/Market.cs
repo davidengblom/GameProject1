@@ -26,7 +26,6 @@ public class Market : MonoBehaviour
     private float costAmount = 0;
     private float crystalCostAmount = 1;
     private float crystalCostAmountDisplayed = 1;
-    private float dailyCrystalCount = 0;
 
     public Text resourceToBuyTitleText;
     public InputField inputField;
@@ -59,15 +58,15 @@ public class Market : MonoBehaviour
 
     void CalcCrystalCost(float i)
     {
-        if (dailyCrystalCount < 1) 
+        if (CurrentDailyCap < 1) 
         {
             crystalCostAmount = Mathf.Pow(i , crystalCostMultiplier);
             crystalCostAmountDisplayed = Mathf.Pow(i + 1 , crystalCostMultiplier);
         }
         else
         {
-            crystalCostAmount = Mathf.Pow(dailyCrystalCount * 1, crystalCostMultiplier);
-            crystalCostAmountDisplayed = Mathf.Pow((1 + dailyCrystalCount) * 1 , crystalCostMultiplier);
+            crystalCostAmount = Mathf.Pow(CurrentDailyCap * 1, crystalCostMultiplier);
+            crystalCostAmountDisplayed = Mathf.Pow((1 + CurrentDailyCap) * 1 , crystalCostMultiplier);
         }
     }
 
@@ -78,7 +77,7 @@ public class Market : MonoBehaviour
         costResourceType.text = resourceCost1.name;
         costAmountText.text = costAmountToText;
         crystalButtonText.text = $"Buy 1 {crystal.name} for {crystalCostAmountDisplayed} {resourceCost1.name}";
-        dailyCapText.text = $"Daily cap: {dailyCrystalCount}/{maxCrystalPerDay}";
+        dailyCapText.text = $"Daily cap: {CurrentDailyCap}/{maxCrystalPerDay}";
     }    
 
     public void GetInput(string input)
@@ -96,8 +95,10 @@ public class Market : MonoBehaviour
 
     public void BuyCrystal()
     {
-        if(!CanAffordCrystal() || dailyCrystalCount >= maxCrystalPerDay) return;
-        dailyCrystalCount++;
+        if (!CanAffordCrystal()) { return; }
+        if (CurrentDailyCap >= maxCrystalPerDay) { return; }
+        
+        CurrentDailyCap++;
         amount++;
         CalcCrystalCost(amount);
         crystal.Owned++;
@@ -142,5 +143,11 @@ public class Market : MonoBehaviour
     }
     bool CanAfford() {
         if (resourceCost1.Owned >= costAmount) { return true; } return false;  
+    }
+    
+    public float CurrentDailyCap
+    {
+        get => PlayerPrefs.GetFloat("DailyCap", 0);
+        set => PlayerPrefs.SetFloat("DailyCap", Mathf.Clamp(value, 0, maxCrystalPerDay));
     }
 }
