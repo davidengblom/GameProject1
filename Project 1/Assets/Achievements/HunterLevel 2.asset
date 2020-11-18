@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92231c22b37a143d18a549a8ef7824f9, type: 3}
-  m_Name: HunterLevel
+  m_Name: HunterLevel 2
   m_EditorClassIdentifier: 
-  requirement: 2
-  reward: 10
+  requirement: 10
+  reward: 5
   resourceReward: {fileID: 11400000, guid: 08eb747457365451d97514c7c74db222, type: 2}
   employeeType: 1

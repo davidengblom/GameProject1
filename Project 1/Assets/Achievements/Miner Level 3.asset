@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c2d0fbcb5a5646c98d5ea9a46fe36a3, type: 3}
-  m_Name: Total Level
+  m_Script: {fileID: 11500000, guid: 92231c22b37a143d18a549a8ef7824f9, type: 3}
+  m_Name: Miner Level 3
   m_EditorClassIdentifier: 
+  requirement: 15
+  reward: 5
   resourceReward: {fileID: 11400000, guid: 08eb747457365451d97514c7c74db222, type: 2}
-  requirement: 10
-  reward: 10
+  employeeType: 0
