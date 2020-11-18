@@ -68,6 +68,7 @@ public class Market : MonoBehaviour
             crystalCostAmount = Mathf.Pow(CurrentDailyCap * 1, crystalCostMultiplier);
             crystalCostAmountDisplayed = Mathf.Pow((1 + CurrentDailyCap) * 1 , crystalCostMultiplier);
         }
+        //Debug.Log($"Crystal displayed: {crystalCostAmountDisplayed} Crystal cost: {crystalCostAmount}");
     }
 
     void UpdateText()
@@ -95,14 +96,16 @@ public class Market : MonoBehaviour
 
     public void BuyCrystal()
     {
-        if (!CanAffordCrystal()) { return; }
-        if (CurrentDailyCap >= maxCrystalPerDay) { return; }
+        if (CanAffordCrystal())
+        {
+            print(resourceCost1.name);
+            CurrentDailyCap++;
+            CalcCrystalCost(CurrentDailyCap);
+            crystal.Owned++;
+            resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
+        }
+        //amount++;CurrentDailyCap <= maxCrystalPerDay && 
         
-        CurrentDailyCap++;
-        amount++;
-        CalcCrystalCost(amount);
-        crystal.Owned++;
-        resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
     }
     public void ConfirmPurchase()
     {
@@ -138,8 +141,10 @@ public class Market : MonoBehaviour
         }
     }
 
-    bool CanAffordCrystal() {
-        if (resourceCost1.Owned >= crystalCostAmount) { return true; } return false;
+    bool CanAffordCrystal()
+    {
+        print(resourceCost1.name + " " + resourceCost1.Owned + " " + crystalCostAmount);
+        return resourceCost1.Owned >= crystalCostAmount;
     }
     bool CanAfford() {
         if (resourceCost1.Owned >= costAmount) { return true; } return false;  
