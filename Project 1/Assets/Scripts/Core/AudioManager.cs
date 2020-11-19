@@ -4,7 +4,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public Sound[] sounds;
+    [SerializeField]
+    Sound[] sounds;
 
     void Awake()
     {
@@ -23,7 +24,10 @@ public class AudioManager : MonoBehaviour
                 this.sounds[i].SetSource(_go.AddComponent<AudioSource>(), j);
             }
         }
+
+       // PlaySound("Music");
     }
+
 
     public void PlaySound(int Sound)
     {
@@ -36,6 +40,7 @@ public class AudioManager : MonoBehaviour
             }
         }
 
+        // no sound with _name
         Debug.LogWarning("AudioManager: Sound not found in list (I canne´ focki´n find eit!): " + Sound);
     }
 
@@ -48,7 +53,7 @@ public class AudioManager : MonoBehaviour
         {
             if (inChild.gameObject == this.gameObject) continue;
             var audioSource = inChild.GetComponent<AudioSource>();
-
+            
             if (audioSource.clip.name != soundName) continue;
             audioSource.Play();
             break;
