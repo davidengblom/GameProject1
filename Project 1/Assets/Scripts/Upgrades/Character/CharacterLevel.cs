@@ -9,7 +9,7 @@ public class CharacterLevel : MonoBehaviour
     public Text levelNumberText;
     private void Update()
     {
-        levelNumberText.text = CalculateTotalLevel().ToString();
+        levelNumberText.text = "Total level: " + CalculateTotalLevel().ToString();
 
     }
 

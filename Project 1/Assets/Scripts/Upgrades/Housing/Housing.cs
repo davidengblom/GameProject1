@@ -14,7 +14,7 @@ namespace Upgrades.Housing
 
         void Start()
         {
-            this.costText.text = CurrentCost().ToString();
+            this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {this.Cost} {this.purchasable.resource.name}";
         }
 
         public void UpgradeEmployeeCap()
@@ -22,7 +22,7 @@ namespace Upgrades.Housing
             if (this.purchasable.resource.Owned < CurrentCost()) return;
             CurrentCost();
             this._hire.EmployeeCap += 1;
-            this.costText.text = CurrentCost().ToString();
+            this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {CurrentCost()} {this.purchasable.resource.name}";
         }
 
         float Cost
