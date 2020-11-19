@@ -48,7 +48,7 @@ namespace Achievements
         void UpdateUI()
         {
             this.achievementImage.fillAmount = this.totalLevel.CalculateTotalLevel() / this.totalLevel.requirement;
-            this.achievementText.text = $"{Mathf.Clamp(this.totalLevel.CalculateTotalLevel(), 0, this.totalLevel.requirement)}/{this.totalLevel.requirement}";
+            this.achievementText.text = $"{this.totalLevel.name} : {Mathf.Clamp(this.totalLevel.CalculateTotalLevel(), 0, this.totalLevel.requirement)}/{this.totalLevel.requirement}";
         }
     }
 }

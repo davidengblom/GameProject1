@@ -53,7 +53,7 @@ namespace Achievements
         void UpdateUI()
         {
             this.achievementImage.fillAmount = this.unitLevel.experience.CurrentLevel / this.unitLevel.requirement;
-            this.achievementText.text = $"{Mathf.Clamp(this.unitLevel.experience.CurrentLevel, 0, this.unitLevel.requirement)}/{this.unitLevel.requirement}";
+            this.achievementText.text = $"{this.unitLevel.name}: {Mathf.Clamp(this.unitLevel.experience.CurrentLevel, 0, this.unitLevel.requirement)}/{this.unitLevel.requirement}";
         }
     }
 }
