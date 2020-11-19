@@ -18,7 +18,7 @@ namespace HUD
 
         private void Start()
         {
-            UpdateData();
+            //UpdateData();
         }
 
         public void UpdateData()

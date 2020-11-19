@@ -42,6 +42,6 @@ namespace Upgrades.Employee
             }
             
         }
-        private void UpdateCostText() => this.costText.text = "Cost" + " " + (int) this.CostMultiplier + " " + this.purchasable.resource;
+        private void UpdateCostText() => this.costText.text = "Cost" + " " + (int) this.CostMultiplier + " " + this.purchasable.resource.name;
     }
 }
