@@ -24,7 +24,7 @@ public class HideMainMenu : MonoBehaviour
         }
     }
 
-    void ShouldHideMenu(bool shouldHide)
+    public void ShouldHideMenu(bool shouldHide)
     {
         if (shouldHide)
         {
