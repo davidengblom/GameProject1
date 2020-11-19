@@ -4,6 +4,6 @@ namespace Achievements
 {
     public class AchievementReference : MonoBehaviour
     {
-    
+        
     }
 }

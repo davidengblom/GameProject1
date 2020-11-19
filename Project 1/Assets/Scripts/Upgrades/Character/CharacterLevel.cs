@@ -2,13 +2,15 @@
 using Achievements;
 using HUD;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterLevel : MonoBehaviour
 {
-    
+    public Text levelNumberText;
     private void Update()
     {
-        CalculateTotalLevel();
+        levelNumberText.text = CalculateTotalLevel().ToString();
+
     }
 
     public float CalculateTotalLevel()
