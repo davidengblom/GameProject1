@@ -10,17 +10,6 @@ namespace Achievements
         public UnitLevel unitLevel;
         public Image achievementImage;
         public Text achievementText;
-
-        void Awake()
-        {
-            CheckRequirement();
-        }
-
-        void Start()
-        {
-            this.unitLevel.experience.employeeType = this.unitLevel.employeeType;
-        }
-
         void CanClaimReward()
         {
             print(this.unitLevel.name);
@@ -38,15 +27,9 @@ namespace Achievements
         void Update()
         {
             UpdateUI();
-            CheckRequirement();
-        }
-
-        void CheckRequirement()
-        {
             if (this.unitLevel.RequirementMet())
             {
                 this.transform.parent = FindObjectOfType<CompletedAchievement>().transform;
-                FindObjectOfType<VerticalLayoutGroupHeight>().UpdateScrollRectHeight();
             }
         }
 

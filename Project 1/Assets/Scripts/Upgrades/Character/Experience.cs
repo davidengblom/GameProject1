@@ -8,7 +8,6 @@ namespace Upgrades.Character
     {
         [Tooltip("How much should max level exp requirement increment per level?")]
         public int incrementFactorPerLevel = 2;
-
         public int baseExpRequirement = 10;
         public EmployeeType employeeType;
 
@@ -28,17 +27,6 @@ namespace Upgrades.Character
         {
             get => PlayerPrefs.GetInt("CurrentLevel" + this.employeeType, 1);
             set => PlayerPrefs.SetInt("CurrentLevel" + this.employeeType, value);
-        }
-
-        public int GetCurrentLevel(EmployeeType employeeType)
-        {
-            this.employeeType = employeeType;
-            if (this.employeeType == employeeType)
-            {
-                return CurrentLevel;
-            }
-
-            return 0;
         }
 
         public void GainExperience(int amountToGain, EmployeeType employeeType)

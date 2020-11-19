@@ -23,7 +23,7 @@ public class Resource : ScriptableObject
 
     public void Produce()
     {
-        this.Owned += this.amountPerClick * this.ClickLevel;
+        this.Owned += this.ClickLevel;
         this._experience.GainExperience(this.expGainPerClick, this._experience.employeeType);
     }
 }
