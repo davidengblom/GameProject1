@@ -1,10 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ToggleOptions : MonoBehaviour
 {
     public bool optionsMenuShowing = false;
+
+
+    void Start()
+    {
+        ShowCanvasGroup(false);
+    }
 
     public void OpenOptionsMenu()
     {
