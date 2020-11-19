@@ -45,7 +45,7 @@ public class TimerDailyCap : MonoBehaviour
         else
         {
             time = setHours + setMinute + setSeconds;
-            timerText.text = "";
+//            timerText.text = "";
         }
     }
 

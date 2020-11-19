@@ -1,32 +1,52 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class FloatingText : MonoBehaviour
 {
-    public float fadingText = 3;
-    public float variation = 3f;
-
-    public Vector3 direction = Vector3.up * 15f;
+    public string resourceName;
+    public float speed;
+    public float duration = 2f;
+    public Text _goldText;
+    public string displayText;
+    readonly Vector3 _moveDirection = Vector3.up;
+    float _resetDuration;
 
     void Start()
     {
-        this.variation = Random.Range(-this.variation, this.variation);
-        this.transform.position += new Vector3(Random.Range(-this.variation, this.variation), 0f, 0f);
-        this.direction.x += this.variation;
+        this.GetComponent<Text>();
+        this._resetDuration = this.duration;
     }
 
-    private void Update()
+    void Update()
     {
-        this.transform.position += this.direction * Time.deltaTime;
-        var text = GetComponent<Text>();
-        var color = text.color;
-        color.a -= this.fadingText * Time.deltaTime;
-        text.color = color;
-        if (color.a <= 0f)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Destroy(this.gameObject);
+            SpawnGoldText(1000);
         }
     }
 
+    public void SpawnGoldText(float goldValue)
+    {
+        this.duration = this._resetDuration;
+        var instance = Instantiate(this._goldText, this.transform);
+        instance.transform.position = this.transform.position;
+        instance.text = $"+{goldValue.ToString()} {this.displayText}";
+        this.StartCoroutine(this.GoldTextAnimation(instance));
+    }
 
+    IEnumerator GoldTextAnimation(Text text)
+    {
+        var canvasGroup = text.GetComponent<CanvasGroup>();
+        while (this.duration > 0)
+        {
+            this.duration -= Time.deltaTime;
+            canvasGroup.alpha -= (Time.deltaTime / this._resetDuration);
+            text.transform.position += this._moveDirection * this.speed * Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(text.gameObject);
+    }
 }
