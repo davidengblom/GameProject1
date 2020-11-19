@@ -21,7 +21,7 @@ namespace Upgrades.Housing
 
         public void UpgradeEmployeeCap()
         {
-            if (this.purchasable.resource.Owned < CurrentCost()) return;
+            if (this.purchasable.resource.Owned < this.Cost) return;
             this.purchasable.resource.Owned -= CurrentCost();
             CurrentCost();
             this._hire.EmployeeCap += 1;
