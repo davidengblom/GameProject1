@@ -62,12 +62,12 @@ public class Market : MonoBehaviour
         if (DailyCrystalCount < 1) 
         {
             crystalCostAmount = Mathf.Pow(i , crystalCostMultiplier);
-            crystalCostAmountDisplayed = Mathf.Pow(i + 1 , crystalCostMultiplier);
+            CrystalCostAmountDisplayed = Mathf.Pow(i + 1 , crystalCostMultiplier);
         }
         else
         {
-            crystalCostAmount = Mathf.Pow(dailyCrystalCount * 1, crystalCostMultiplier);
-            crystalCostAmountDisplayed = Mathf.Pow((1 + dailyCrystalCount) * 1 , crystalCostMultiplier);
+            crystalCostAmount = Mathf.Pow(DailyCrystalCount * 1, crystalCostMultiplier);
+            CrystalCostAmountDisplayed = Mathf.Pow((1 + DailyCrystalCount) * 1 , crystalCostMultiplier);
         }
     }
 
@@ -77,8 +77,8 @@ public class Market : MonoBehaviour
         resourceToBuyTitleText.text = this.resource.name;
         costResourceType.text = resourceCost1.name;
         costAmountText.text = costAmountToText;
-        crystalButtonText.text = $"Buy 1 {crystal.name} for {crystalCostAmountDisplayed} {resourceCost1.name}";
-        dailyCapText.text = $"Daily cap: {dailyCrystalCount}/{maxCrystalPerDay}";
+        crystalButtonText.text = $"Buy 1 {crystal.name} for {CrystalCostAmountDisplayed} {resourceCost1.name}";
+        dailyCapText.text = $"Daily cap: {DailyCrystalCount}/{maxCrystalPerDay}";
     }    
 
     public void GetInput(string input)
@@ -136,12 +136,17 @@ public class Market : MonoBehaviour
             resourceCost1 = gold;
         }
     }
-    
 
+    
+    public float CrystalCostAmountDisplayed
+    {
+        get => PlayerPrefs.GetFloat("CrystalCostAmountDisplayed", 1);
+        set => PlayerPrefs.SetFloat("CrystalCostAmountDisplayed", value);
+    }
     public float DailyCrystalCount
     {
-        get => dailyCrystalCount;
-        set => dailyCrystalCount = value;
+        get => PlayerPrefs.GetFloat("dailyCrystalCount", 0);
+        set => PlayerPrefs.SetFloat("dailyCrystalCount", value);
     }
     public bool DailyCapIsCaped()
     {
