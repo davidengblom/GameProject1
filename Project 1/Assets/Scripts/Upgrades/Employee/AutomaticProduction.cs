@@ -40,7 +40,7 @@ namespace Upgrades.Employee
 
         public int ResourceAmountPerSecond()
         {
-            return (this._hire.EmployeeUnit * this.ProductionMultiplier) + (this.employee.resource.amountPerClick * this._hire.EmployeeUnit);
+            return (this._hire.EmployeeUnit * this.ProductionMultiplier);
         }
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Total Level
   m_EditorClassIdentifier: 
   resourceReward: {fileID: 11400000, guid: 08eb747457365451d97514c7c74db222, type: 2}
-  requirement: 10
+  requirement: 5
   reward: 10

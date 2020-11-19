@@ -8,10 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Alex Test Scene.unity
-    guid: d303a8fd8969649c39c5442e8ae854af
-  - enabled: 1
-    path: Assets/Scenes/temporary scene for testing.unity
-    guid: b200384bef3f0405e854f2c07527648a
   m_configObjects: {}
