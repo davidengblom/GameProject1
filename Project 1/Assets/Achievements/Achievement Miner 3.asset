@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92231c22b37a143d18a549a8ef7824f9, type: 3}
-  m_Name: MinerLevel 2
+  m_Name: Achievement Miner 3
   m_EditorClassIdentifier: 
   requirement: 15
   reward: 5
