@@ -33,6 +33,7 @@ public class TimerDailyCap : MonoBehaviour
             timerText.text = $"{hours}h {minutes}m {seconds}s";
             if (time >= 0) {
                 butCrystalButton.enabled = false;
+                dailyCap.CrystalCostAmountDisplayed = 1;
             }else {
                 dailyCap.DailyCrystalCount = 0;
                 butCrystalButton.enabled = true;
