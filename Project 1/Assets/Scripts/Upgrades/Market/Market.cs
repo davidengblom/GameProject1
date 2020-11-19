@@ -100,8 +100,12 @@ public class Market : MonoBehaviour
         DailyCrystalCount++;
         amount++;
         CalcCrystalCost(amount);
-        crystal.Owned++;
-        resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
+        if (crystalCostAmount <= resourceCost1.Owned)
+        {
+            crystal.Owned++;
+            resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
+            amount = 0;
+        } 
     }
     public void ConfirmPurchase()
     {
