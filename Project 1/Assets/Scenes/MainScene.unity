@@ -753,7 +753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127, y: 98}
+  m_AnchoredPosition: {x: 378, y: -66}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133430021
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e09867ebefff9074eb9f06ce6a2a5555, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90c5d3bc4fab0466abec2a580f0fa794, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3068,85 +3068,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
---- !u!1 &782343495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 782343496}
-  - component: {fileID: 782343498}
-  - component: {fileID: 782343497}
-  m_Layer: 5
-  m_Name: Text (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &782343496
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782343495}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1785778624}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7800021, y: -1.4694}
-  m_SizeDelta: {x: 244.05063, y: 24.612942}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &782343497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782343495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: c0dea4f7d02df984baa58a0440b52016, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 0.8
-  m_Text: 'Increase the amount of employees hired by 2                              '
---- !u!222 &782343498
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782343495}
-  m_CullTransparentMesh: 0
 --- !u!1 &783302937
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,17 +4219,6 @@ Transform:
   m_Father: {fileID: 1333465013}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1078559272 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 373009367626801446, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-  m_PrefabInstance: {fileID: 1717415687}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1118887398
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,23 +5512,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8054854811037062309, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
   m_PrefabInstance: {fileID: 1717415687}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1414597699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414597693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79da2f6e1f2044cbda7677f06354ecac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  purchasable:
-    resource: {fileID: 11400000, guid: 08eb747457365451d97514c7c74db222, type: 2}
-    cost: 10
-  costText: {fileID: 1078559272}
-  costIncrementPercent: 50
 --- !u!1 &1488488671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5977,53 +5870,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2040442642}
     m_Modifications:
-    - target: {fileID: 373009367626801446, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_Text
-      value: 'Increase the amount of employees hired by 2                              '
-      objectReference: {fileID: 0}
-    - target: {fileID: 373009367626801446, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068825504326590447, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -16
-      objectReference: {fileID: 0}
     - target: {fileID: 2621638722307559162, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
       propertyPath: m_Name
       value: Housing InfoPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621638722307559162, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734772862607367348, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317764392205390785, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096621504276392683, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334110099263037546, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -44
-      objectReference: {fileID: 0}
-    - target: {fileID: 7359961584315821453, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1.4694
-      objectReference: {fileID: 0}
-    - target: {fileID: 7359961584315821453, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 24.612942
-      objectReference: {fileID: 0}
-    - target: {fileID: 7401759307423566737, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8054854811037062309, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6208,11 +6057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1785778624 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2734772862607367348, guid: 43fb686060a79ab4c82ce80d9693957b, type: 3}
-  m_PrefabInstance: {fileID: 1717415687}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1898940647
 MonoBehaviour:
   m_ObjectHideFlags: 0
