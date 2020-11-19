@@ -332,9 +332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efd7c8efeaea1140827097eafec3ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceName: 
   speed: 20
   duration: 2
   _goldText: {fileID: 7592398132923904049, guid: f28a1516e1b4d40c2b268c41c0a500a1, type: 3}
+  displayText: 
 --- !u!1 &1003871486
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +738,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6813612651677842020, guid: e2d2d74073a4d478db93ec35c5ad51e1, type: 3}
+      propertyPath: persistantObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 3527980133876248714, guid: 7915adcefa697420ab39a42fd255fb9f, type: 3}
     - target: {fileID: 6813612651677842021, guid: e2d2d74073a4d478db93ec35c5ad51e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 407.85822

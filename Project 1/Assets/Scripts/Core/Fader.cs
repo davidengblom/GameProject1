@@ -12,10 +12,8 @@ namespace Core
         void Start()
         {
             this._canvasGroup = GetComponent<CanvasGroup>();
-            ActivateCanvasGroup(false);
         }
 
-        
 
         public IEnumerator FadeOut()
         {
@@ -38,6 +36,7 @@ namespace Core
 
             while (timer > 0)
             {
+                print(timer + "   " + this._canvasGroup.alpha);
                 timer -= Time.deltaTime;
                 this._canvasGroup.alpha -= Time.deltaTime;
                 yield return null;
