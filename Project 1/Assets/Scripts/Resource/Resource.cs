@@ -2,7 +2,7 @@
 using Upgrades.Character;
 
 [CreateAssetMenu]
-public class Resource : ScriptableObject, IReset
+public class Resource : ScriptableObject
 {
     public Color color;
     public int amountPerClick = 1;
@@ -35,10 +35,5 @@ public class Resource : ScriptableObject, IReset
                 break;
             }
         }
-    }
-
-    public void Reset()
-    {
-        ClickLevel = amountPerClick;
     }
 }
