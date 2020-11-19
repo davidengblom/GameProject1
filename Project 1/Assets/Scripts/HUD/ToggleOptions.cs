@@ -21,12 +21,14 @@ public class ToggleOptions : MonoBehaviour
 
     public void CloseOptionsMenu()
     {
+        print("doing stuff");
+        
         ShowCanvasGroup(false);
     }
 
     void ShowCanvasGroup(bool shouldShow)
     {
-        var canvasGroup = GetComponent<CanvasGroup>();
+        var canvasGroup = FindObjectOfType<ToggleOptions>().GetComponent<CanvasGroup>();
         if (shouldShow)
         {
             canvasGroup.alpha = 1;

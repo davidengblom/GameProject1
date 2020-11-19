@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 48839000}
   - component: {fileID: 48838999}
   - component: {fileID: 48839001}
+  - component: {fileID: 48839002}
   m_Layer: 5
   m_Name: ExperienceBar Hunter
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.26202878, g: 1, b: 0.033018887, a: 1}
+  m_Color: {r: 0.2627451, g: 1, b: 0.03137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -96,6 +97,18 @@ MonoBehaviour:
     incrementFactorPerLevel: 2
     baseExpRequirement: 10
     employeeType: 1
+--- !u!114 &48839002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48838997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a96135c82f9b45d08216e256a645efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &301162658
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +197,7 @@ GameObject:
   - component: {fileID: 560166521}
   - component: {fileID: 560166520}
   - component: {fileID: 560166522}
+  - component: {fileID: 560166523}
   m_Layer: 5
   m_Name: ExperienceBar Lumberjack
   m_TagString: Untagged
@@ -268,6 +282,18 @@ MonoBehaviour:
     incrementFactorPerLevel: 2
     baseExpRequirement: 10
     employeeType: 2
+--- !u!114 &560166523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560166518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a96135c82f9b45d08216e256a645efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767394276
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +730,7 @@ GameObject:
   - component: {fileID: 1402396967}
   - component: {fileID: 1402396966}
   - component: {fileID: 1402396968}
+  - component: {fileID: 1402396969}
   m_Layer: 5
   m_Name: ExperienceBar Miner
   m_TagString: Untagged
@@ -788,6 +815,18 @@ MonoBehaviour:
     incrementFactorPerLevel: 2
     baseExpRequirement: 10
     employeeType: 0
+--- !u!114 &1402396969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402396964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a96135c82f9b45d08216e256a645efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441331820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1458,7 @@ GameObject:
   - component: {fileID: 1601074545506268383}
   - component: {fileID: 1944975167632308708}
   - component: {fileID: 7372835204303230}
+  - component: {fileID: 1778251821}
   m_Layer: 8
   m_Name: ExperienceBar TotalLevel
   m_TagString: Untagged
@@ -1485,6 +1525,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1778251821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3377137770418399759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891782494efd1c3489563b073521c9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumberText: {fileID: 8536099171226872163}
 --- !u!1 &5571362726820798520
 GameObject:
   m_ObjectHideFlags: 0
