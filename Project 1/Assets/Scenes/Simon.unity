@@ -2474,10 +2474,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 222693413}
     m_Modifications:
+    - target: {fileID: 1031652214229980598, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 339883442}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setTime
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setSeconds
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: butCrystalButton
+      value: 
+      objectReference: {fileID: 1880617782}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setMinute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setHours
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5051855203270705379, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -4500,6 +4524,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2970597673274789588, guid: 94fb448137cec4c1d854522d88ad4ca8, type: 3}
   m_PrefabInstance: {fileID: 2119037880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1880617782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7207390494599340073, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+  m_PrefabInstance: {fileID: 1018328498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1891384415
 PrefabInstance:
   m_ObjectHideFlags: 0
