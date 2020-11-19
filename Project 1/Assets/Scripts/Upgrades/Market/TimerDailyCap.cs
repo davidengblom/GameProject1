@@ -11,8 +11,7 @@ public class TimerDailyCap : MonoBehaviour
     public float setSeconds = 2;
     
     private float time;
-
-
+    
     private void Start()
     {
         setHours = setHours * 3600;
@@ -32,18 +31,14 @@ public class TimerDailyCap : MonoBehaviour
             var seconds = (time % 60).ToString("0");
 
             timerText.text = $"{hours}h {minutes}m {seconds}s";
-            if (time >= 0)
-            {
+            if (time >= 0) {
                 butCrystalButton.enabled = false;
-            }
-            else
-            {
+            }else {
                 dailyCap.DailyCrystalCount = 0;
                 butCrystalButton.enabled = true;
             }
         }
-        else
-        {
+        else {
             time = setHours + setMinute + setSeconds;
             timerText.text = "";
         }
