@@ -19,8 +19,7 @@ public class Hire
 
     public int EmployeeCap
     {
-        get => PlayerPrefs.GetInt("EmployeeCap" + employeeType, 5);
-        set => PlayerPrefs.SetInt("EmployeeCap" + employeeType, value);
+        get => PlayerPrefs.GetInt("EmployeeCap", 5);
+        set => PlayerPrefs.SetInt("EmployeeCap", value);
     }
-
 }
