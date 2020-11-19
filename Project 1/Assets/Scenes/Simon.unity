@@ -3074,6 +3074,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNumberText: {fileID: 840417666}
+  Resources:
+  - {fileID: 11400000, guid: fc7d5e5f17cb34bfb83ddab68ba7bee6, type: 2}
+  - {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
+  - {fileID: 11400000, guid: d5567aee9d65d43e189505b2c42a7ac5, type: 2}
 --- !u!1 &893398011
 GameObject:
   m_ObjectHideFlags: 0

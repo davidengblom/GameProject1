@@ -123,15 +123,19 @@ public class Market : MonoBehaviour
     public void ChooseResource(Resource chooseResource)
     {
         resource = chooseResource;
-
+        
+        //food for stone
+        //sten for ved
+        //ved for mat
+        
         if (this.resource.name == food.name) {
             resourceCost1 = stone;
             resourceCost2 = wood;
         }else if (this.resource.name == stone.name) {
-            resourceCost1 = food;
-            resourceCost2 = wood;
+            resourceCost1 = wood;
+            resourceCost2 = stone;
         }else if (this.resource.name == wood.name) {
-            resourceCost1 = stone;
+            resourceCost1 = food;
             resourceCost2 = food;
         }else if (this.resource.name == gold.name) {
             resourceCost1 = food;
