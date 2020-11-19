@@ -22,6 +22,7 @@ namespace Upgrades.Housing
         public void UpgradeEmployeeCap()
         {
             if (this.purchasable.resource.Owned < CurrentCost()) return;
+            this.purchasable.resource.Owned -= CurrentCost();
             CurrentCost();
             this._hire.EmployeeCap += 1;
             this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {CurrentCost()} {this.purchasable.resource.name}";
