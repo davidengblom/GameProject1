@@ -31,7 +31,7 @@ public class Resource : ScriptableObject
         {
             if (floatingText.resourceName == this.name)
             {
-                floatingText.SpawnGoldText(this.amountPerClick * this.ClickLevel);
+                floatingText.SpawnGoldText(this.ClickLevel);
                 break;
             }
         }
