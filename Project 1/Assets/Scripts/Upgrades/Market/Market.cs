@@ -137,6 +137,10 @@ public class Market : MonoBehaviour
         }
     }
 
+    public bool DailyCapIsCaped()
+    {
+        if (dailyCrystalCount == maxCrystalPerDay) { return true; } return false;
+    }
     bool CanAffordCrystal() {
         if (resourceCost1.Owned >= crystalCostAmount) { return true; } return false;
     }

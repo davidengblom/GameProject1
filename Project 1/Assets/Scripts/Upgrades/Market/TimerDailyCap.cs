@@ -11,21 +11,39 @@ public class TimerDailyCap : MonoBehaviour
     public float countDownTime = 24;
 
     private float timer;
+    private float resetTimer;
 
-    private void Update()
+    private void Start()
     {
-        
+        StartCoroutine(Timer());
+    }
+
+    private IEnumerator Timer()
+    {
+        timer = countDownTime;
+
+        do
+        {
+            timer -= Time.deltaTime;
+
+            FormatText();
+
+            yield return null;
+
+        } while (timer > 0);
     }
 
     void FormatText()
     {
+        int day = (int) (timer / 86400) % 365;
         int hour = (int)(timer / 3600) % 24;
         int minute = (int)(timer / 60) % 60;
-        int second = (int) (timer / 60);
-
-        if (hour > 0) { timerText.text += $"{hour}:"; }
-        if (minute > 0) { timerText.text += minute; }
-        if (second > 0) { timerText.text += second; }
+        int second = (int) (timer % 60);
+        
+        if (day > 0) { timerText.text += $"{day}d "; }
+        if (hour > 0) { timerText.text += $"{hour}h "; }
+        if (minute > 0) { timerText.text += $"{minute}m "; }
+        if (second > 0) { timerText.text += $"{second}s "; }
     }
     
     public float SaveTime
