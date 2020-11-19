@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class PersistantObjects : MonoBehaviour
 {
-    PersistantObjects instance;
+    public GameObject[] persistantObjects;
+
+    static bool _hasBeenInstaniated = false;
 
     void Start()
     {
-        this.instance = FindObjectOfType<PersistantObjects>();
+        if (_hasBeenInstaniated) return;
 
-        DontDestroyOnLoad(this.instance.gameObject);
+        for (var i = 0; i < this.persistantObjects.Length; i++)
+        {
+            var obj = Instantiate(this.persistantObjects[i], this.transform.parent);
+            DontDestroyOnLoad(obj);
+        }
+
+        _hasBeenInstaniated = true;
     }
 }
