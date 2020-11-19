@@ -36,6 +36,15 @@ namespace Upgrades.Employee
             this.employee.timer = Time.time;
             this.employee.resource.Owned += ResourceAmountPerSecond();
             this._text.text = this.employee.resource.Owned.ToString();
+
+            foreach (var floatingText in FindObjectsOfType<FloatingText>())
+            {
+                if (floatingText.resourceName == this.employee.resource.name && ResourceAmountPerSecond() > 0)
+                {
+                    floatingText.SpawnGoldText(ResourceAmountPerSecond());
+                    break;
+                }
+            }
         }
 
         public int ResourceAmountPerSecond()
