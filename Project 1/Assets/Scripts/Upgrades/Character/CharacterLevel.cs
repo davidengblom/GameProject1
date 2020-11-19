@@ -17,7 +17,7 @@ public class CharacterLevel : MonoBehaviour
     private void Update()
     {
         levelNumberText.text = "Total level: " + CalculateTotalLevel();
-        if()
+        //if()
         UpgradeClickAmount();
     }
 
