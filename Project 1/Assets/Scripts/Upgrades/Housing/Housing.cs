@@ -17,12 +17,17 @@ namespace Upgrades.Housing
         void Start()
         {
             this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {(int) this.Cost} {this.purchasable.resource.name}";
+            print(Cost);
+        }
+
+        void Update()
+        {
         }
 
         public void UpgradeEmployeeCap()
         {
             if (this.purchasable.resource.Owned < this.Cost) return;
-            this.purchasable.resource.Owned -= CurrentCost();
+            this.purchasable.resource.Owned -= (int) this.Cost;
             CurrentCost();
             this._hire.EmployeeCap += 1;
             this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {CurrentCost()} {this.purchasable.resource.name}";
