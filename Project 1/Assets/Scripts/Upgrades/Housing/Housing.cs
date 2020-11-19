@@ -14,7 +14,7 @@ namespace Upgrades.Housing
 
         void Start()
         {
-            this.costText.text = CurrentCost().ToString();
+            this.costText.text = this.Cost.ToString();
         }
 
         public void UpgradeEmployeeCap()
