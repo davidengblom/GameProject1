@@ -30,7 +30,7 @@ namespace Upgrades.Housing
             this.purchasable.resource.Owned -= (int) this.Cost;
             CurrentCost();
             this._hire.EmployeeCap += 1;
-            this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {CurrentCost()} {this.purchasable.resource.name}";
+            this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {this.Cost} {this.purchasable.resource.name}";
         }
 
         float Cost
