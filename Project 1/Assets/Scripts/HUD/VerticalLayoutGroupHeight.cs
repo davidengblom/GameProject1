@@ -15,6 +15,7 @@ public class VerticalLayoutGroupHeight : MonoBehaviour
         var childCount = 0;
         var height = 0f;
         childCount = this.transform.childCount;
+        if (childCount == 0) return;
         var child = this.transform.GetChild(0);
         height = child.GetComponent<RectTransform>().rect.height;
 
