@@ -38,7 +38,7 @@ namespace Upgrades.Employee
                 this.autoProd.ProductionMultiplier += this.multiplier;
                 this.resourceToProduce.ClickLevel += this.multiplier;
                 UpdateCostText();
-                this._ui.UpdateData();
+                //this._ui.UpdateData();
             }
             
         }

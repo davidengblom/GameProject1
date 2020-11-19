@@ -9,8 +9,8 @@ namespace HUD
 {
     public class UpgradesUI : MonoBehaviour,IReset
     {
-        public Text currentUpgradesText;
-        public Text currentClickUpgradesText;
+        //public Text currentUpgradesText;
+        //public Text currentClickUpgradesText;
 
         public Upgrade hunterUpgrade, lumberUpgrade, minerUpgrade;
         
@@ -21,14 +21,14 @@ namespace HUD
             //UpdateData();
         }
 
-        public void UpdateData()
+        /*public void UpdateData()
         {
             this.currentUpgradesText.text =
                 $"{this.hunterUpgrade.autoProductions.ResourceAmountPerSecond()} Food /s, {this.lumberUpgrade.autoProductions.ResourceAmountPerSecond()} Wood /s, {this.minerUpgrade.autoProductions.ResourceAmountPerSecond()} Stone /s";
             
             this.currentClickUpgradesText.text =
                 $"{this.food.ClickLevel} Food per click, {this.wood.ClickLevel} Wood per click, {this.stone.ClickLevel} Stone per click";
-        }
+        }*/
 
         public void Reset()
         {
