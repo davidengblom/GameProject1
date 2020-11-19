@@ -12,6 +12,11 @@ namespace Upgrades.Housing
         public float costIncrementPercent = 50;
         Hire _hire;
 
+        void Start()
+        {
+            this.costText.text = CurrentCost().ToString();
+        }
+
         public void UpgradeEmployeeCap()
         {
             if (this.purchasable.resource.Owned < CurrentCost()) return;
