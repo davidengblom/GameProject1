@@ -11,11 +11,6 @@ namespace Achievements
         public Image achievementImage;
         public Text achievementText;
 
-        void Awake()
-        {
-            CheckRequirement();
-        }
-
         void ClaimReward()
         {
             print(this.totalLevel.name);
@@ -32,17 +27,12 @@ namespace Achievements
 
         void Update()
         {
-            UpdateUI();
-            CheckRequirement();
-        }
-
-        void CheckRequirement()
-        {
             if (this.totalLevel.RequirementMet())
             {
                 this.transform.parent = FindObjectOfType<CompletedAchievement>().transform;
-                FindObjectOfType<VerticalLayoutGroupHeight>().UpdateScrollRectHeight();
             }
+
+            UpdateUI();
         }
 
         void UpdateUI()

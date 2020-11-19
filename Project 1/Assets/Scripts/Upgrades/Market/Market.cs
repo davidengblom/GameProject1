@@ -26,6 +26,7 @@ public class Market : MonoBehaviour
     private float costAmount = 0;
     private float crystalCostAmount = 1;
     private float crystalCostAmountDisplayed = 1;
+    private float dailyCrystalCount = 0;
 
     public Text resourceToBuyTitleText;
     public InputField inputField;
@@ -58,17 +59,16 @@ public class Market : MonoBehaviour
 
     void CalcCrystalCost(float i)
     {
-        if (CurrentDailyCap < 1) 
+        if (dailyCrystalCount < 1) 
         {
             crystalCostAmount = Mathf.Pow(i , crystalCostMultiplier);
             crystalCostAmountDisplayed = Mathf.Pow(i + 1 , crystalCostMultiplier);
         }
         else
         {
-            crystalCostAmount = Mathf.Pow(CurrentDailyCap * 1, crystalCostMultiplier);
-            crystalCostAmountDisplayed = Mathf.Pow((1 + CurrentDailyCap) * 1 , crystalCostMultiplier);
+            crystalCostAmount = Mathf.Pow(dailyCrystalCount * 1, crystalCostMultiplier);
+            crystalCostAmountDisplayed = Mathf.Pow((1 + dailyCrystalCount) * 1 , crystalCostMultiplier);
         }
-        //Debug.Log($"Crystal displayed: {crystalCostAmountDisplayed} Crystal cost: {crystalCostAmount}");
     }
 
     void UpdateText()
@@ -78,7 +78,7 @@ public class Market : MonoBehaviour
         costResourceType.text = resourceCost1.name;
         costAmountText.text = costAmountToText;
         crystalButtonText.text = $"Buy 1 {crystal.name} for {crystalCostAmountDisplayed} {resourceCost1.name}";
-        dailyCapText.text = $"Daily cap: {CurrentDailyCap}/{maxCrystalPerDay}";
+        dailyCapText.text = $"Daily cap: {dailyCrystalCount}/{maxCrystalPerDay}";
     }    
 
     public void GetInput(string input)
@@ -96,16 +96,12 @@ public class Market : MonoBehaviour
 
     public void BuyCrystal()
     {
-        if (CanAffordCrystal())
-        {
-            print(resourceCost1.name);
-            CurrentDailyCap++;
-            CalcCrystalCost(CurrentDailyCap);
-            crystal.Owned++;
-            resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
-        }
-        //amount++;CurrentDailyCap <= maxCrystalPerDay && 
-        
+        if(!CanAffordCrystal() || dailyCrystalCount >= maxCrystalPerDay) return;
+        dailyCrystalCount++;
+        amount++;
+        CalcCrystalCost(amount);
+        crystal.Owned++;
+        resourceCost1.Owned -= Convert.ToInt32(crystalCostAmount);
     }
     public void ConfirmPurchase()
     {
@@ -141,18 +137,10 @@ public class Market : MonoBehaviour
         }
     }
 
-    bool CanAffordCrystal()
-    {
-        print(resourceCost1.name + " " + resourceCost1.Owned + " " + crystalCostAmount);
-        return resourceCost1.Owned >= crystalCostAmount;
+    bool CanAffordCrystal() {
+        if (resourceCost1.Owned >= crystalCostAmount) { return true; } return false;
     }
     bool CanAfford() {
         if (resourceCost1.Owned >= costAmount) { return true; } return false;  
-    }
-    
-    public float CurrentDailyCap
-    {
-        get => PlayerPrefs.GetFloat("DailyCap", 0);
-        set => PlayerPrefs.SetFloat("DailyCap", Mathf.Clamp(value, 0, maxCrystalPerDay));
     }
 }
