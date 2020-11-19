@@ -8,37 +8,28 @@ public class TimerDailyCap : MonoBehaviour
 {
     public Market dailyCap;
     public Text timerText;
-    public float countDownTime = 24;
+    public float setDays = 1;
+    public float setHours = 1;
 
     private float timer;
     private float resetTimer;
 
     private void Start()
     {
-        StartCoroutine(Timer());
+        
     }
 
-    private IEnumerator Timer()
+    private void Update()
     {
-        timer = countDownTime;
-
-        do
-        {
-            timer -= Time.deltaTime;
-
-            FormatText();
-
-            yield return null;
-
-        } while (timer > 0);
+        FormatText();
     }
 
     void FormatText()
     {
         int day = (int) (timer / 86400) % 365;
-        int hour = (int)(timer / 3600) % 24;
-        int minute = (int)(timer / 60) % 60;
-        int second = (int) (timer % 60);
+        int hour = (int)(day / 3600) % 24;
+        int minute = (int)(hour/ 60) % 60;
+        int second = (int) (minute % 60);
         
         if (day > 0) { timerText.text += $"{day}d "; }
         if (hour > 0) { timerText.text += $"{hour}h "; }
