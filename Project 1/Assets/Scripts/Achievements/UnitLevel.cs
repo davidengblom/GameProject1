@@ -13,11 +13,11 @@ namespace Achievements
         public EmployeeType employeeType;
 
         [NonSerialized]
-        public Experience experience = new Experience();
+        public readonly Experience experience = new Experience();
 
         public bool RequirementMet()
         {
-            return this.experience.employeeType == this.employeeType && this.experience.CurrentLevel >= this.requirement;
+            return this.experience.GetCurrentLevel(this.employeeType) >= this.requirement;
         }
 
         public int HasBeenRewarded
