@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Upgrades.Character;
 
 namespace Upgrades.Housing
 {
@@ -10,11 +12,11 @@ namespace Upgrades.Housing
         public Text costText;
 
         public float costIncrementPercent = 50;
-        Hire _hire;
+        Hire _hire = new Hire();
 
         void Start()
         {
-            this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {this.Cost} {this.purchasable.resource.name}";
+            this.costText.text = $"Increase the amount of employees hired by 1 \n Cost: {(int) this.Cost} {this.purchasable.resource.name}";
         }
 
         public void UpgradeEmployeeCap()
