@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92231c22b37a143d18a549a8ef7824f9, type: 3}
-  m_Name: Miner Level 2
+  m_Name: LumberJackLevel 3
   m_EditorClassIdentifier: 
-  requirement: 2
-  reward: 5000
-  resourceReward: {fileID: 11400000, guid: 7b4386d8c043f40d6ad9d8ac9fa084bf, type: 2}
-  employeeType: 0
+  requirement: 15
+  reward: 5
+  resourceReward: {fileID: 11400000, guid: 08eb747457365451d97514c7c74db222, type: 2}
+  employeeType: 2

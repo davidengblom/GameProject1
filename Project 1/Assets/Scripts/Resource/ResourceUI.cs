@@ -1,19 +1,12 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ResourceUI : MonoBehaviour, IReset
-{
+public class ResourceUI : MonoBehaviour {
     public Text amountText;
     public Resource resource;
-
     void Update()
     {
-        amountText.text = resource.Owned.ToString();
-    }
-
-    public void Reset()
-    {
-        this.resource.Owned = 0;
+        amountText.text = resource.Owned.ToString();   
     }
 }
+
