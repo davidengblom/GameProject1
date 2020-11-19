@@ -59,7 +59,7 @@ public class Market : MonoBehaviour
 
     void CalcCrystalCost(float i)
     {
-        if (dailyCrystalCount < 1) 
+        if (DailyCrystalCount < 1) 
         {
             crystalCostAmount = Mathf.Pow(i , crystalCostMultiplier);
             crystalCostAmountDisplayed = Mathf.Pow(i + 1 , crystalCostMultiplier);
@@ -96,8 +96,8 @@ public class Market : MonoBehaviour
 
     public void BuyCrystal()
     {
-        if(!CanAffordCrystal() || dailyCrystalCount >= maxCrystalPerDay) return;
-        dailyCrystalCount++;
+        if(!CanAffordCrystal() || DailyCrystalCount >= maxCrystalPerDay) return;
+        DailyCrystalCount++;
         amount++;
         CalcCrystalCost(amount);
         crystal.Owned++;
@@ -136,10 +136,16 @@ public class Market : MonoBehaviour
             resourceCost1 = gold;
         }
     }
+    
 
+    public float DailyCrystalCount
+    {
+        get => dailyCrystalCount;
+        set => dailyCrystalCount = value;
+    }
     public bool DailyCapIsCaped()
     {
-        if (dailyCrystalCount == maxCrystalPerDay) { return true; } return false;
+        if (DailyCrystalCount == maxCrystalPerDay) { return true; } return false;
     }
     bool CanAffordCrystal() {
         if (resourceCost1.Owned >= crystalCostAmount) { return true; } return false;
