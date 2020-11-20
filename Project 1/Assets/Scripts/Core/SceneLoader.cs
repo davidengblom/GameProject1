@@ -19,7 +19,7 @@ namespace Core
             DontDestroyOnLoad(this.gameObject);
             yield return FindObjectOfType<Fader>().FadeOut();
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
-            yield return FindObjectOfType<Fader>().FadeIn();
+            //yield return FindObjectOfType<Fader>().FadeIn();
             Destroy(this.gameObject);
         }
     }
