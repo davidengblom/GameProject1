@@ -54,7 +54,7 @@ namespace HUD
     
         void ShouldShowPanel(bool shouldShowPanel)
         {
-            foreach (var toggleOverviewPanel in this._canvasGroups)
+            foreach (var toggleOverviewPanel in FindObjectsOfType<CanvasGroup>())
             {
                 if (shouldShowPanel)
                 {
