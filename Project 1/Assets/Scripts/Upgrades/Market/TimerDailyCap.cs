@@ -17,7 +17,7 @@ public class TimerDailyCap : MonoBehaviour
         setHours = setHours * 3600;
         setMinute = setMinute * 60;
         time = setHours + setMinute + setSeconds;
-        //SaveTime += time;
+        time = SaveTime;
     }
 
     private void Update()
@@ -25,10 +25,10 @@ public class TimerDailyCap : MonoBehaviour
         if (dailyCap.DailyCapIsCaped())
         {
             time -= Time.deltaTime;
-
-            var hours = (((int) time / 3600) % 24).ToString();
-            var minutes = (((int) time / 60) % 60).ToString();
-            var seconds = (time % 60).ToString("0");
+            SaveTime = time;
+            var hours = (((int) SaveTime / 3600) % 24).ToString();
+            var minutes = (((int) SaveTime / 60) % 60).ToString();
+            var seconds = (SaveTime % 60).ToString("0");
 
             timerText.text = $"{hours}h {minutes}m {seconds}s";
             if (time >= 0) {

@@ -7,23 +7,11 @@ using UnityEngine.UI;
 public class CharacterLevel : MonoBehaviour
 {
     public Text levelNumberText;
-    public Resource resource;
-    
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {
         levelNumberText.text = "Total level: " + CalculateTotalLevel();
-        //if()
-        UpgradeClickAmount();
-    }
-
-    public void UpgradeClickAmount()
-    {
-        resource.ClickLevel += Convert.ToInt32(CalculateTotalLevel());
+       
     }
 
     public float CalculateTotalLevel()
