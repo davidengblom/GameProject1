@@ -7469,6 +7469,18 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 678700572}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setHours
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setMinute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: setSeconds
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4696395431153582754, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 18

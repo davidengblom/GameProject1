@@ -14,6 +14,7 @@ public class TimerDailyCap : MonoBehaviour
     
     private void Start()
     {
+        timerText = GetComponent<Text>();
         setHours = setHours * 3600;
         setMinute = setMinute * 60;
         time = setHours + setMinute + setSeconds;
