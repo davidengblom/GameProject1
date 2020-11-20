@@ -3249,6 +3249,17 @@ Transform:
   m_Father: {fileID: 1823956806}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678700572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1031652214229980598, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+  m_PrefabInstance: {fileID: 1574703239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &679810141
 GameObject:
   m_ObjectHideFlags: 0
@@ -7454,6 +7465,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 16.99999
       objectReference: {fileID: 0}
+    - target: {fileID: 4271399836587940235, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 678700572}
     - target: {fileID: 4696395431153582754, guid: 3476bc341e6e845e48b16ddb4d01b4c5, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 18
